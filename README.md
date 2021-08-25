@@ -3,4 +3,14 @@ This is a collection of course notes for use with lectures on Calculus III (aka 
 
 This Calculus III course follows the freely available textbook [*Active Calculus -- Multivariable + Vector*](https://activecalculus.org/ACM.html) by Steve Schlicker, Mitchel T. Keller, & Nicholas Long.
 
-These notes are released with a [Creative Commons BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/4.0/). They were written in LaTeX with [Overleaf](https://www.overleaf.com).
+
+Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
