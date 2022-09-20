@@ -3,6 +3,7 @@ This is a collection of course notes for use with lectures on Calculus III (aka 
 
 This Calculus III course follows the freely available textbook [*Active Calculus -- Multivariable + Vector*](https://activecalculus.org/ACM.html) by Steve Schlicker, Mitchel T. Keller, & Nicholas Long.
 
+The source for the notes is in the source/ directory. The main file to typeset is main.tex.
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
