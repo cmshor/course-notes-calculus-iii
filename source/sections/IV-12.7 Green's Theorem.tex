@@ -1,0 +1,185 @@
+\newlecture
+
+\setcounter{section}{6}
+
+%\def\textbookchapter{Chapter 12: Vector Calculus}
+\def\coursetopicnumber{IV}
+\def\topic{Green's Theorem} % this is the printed title
+\def\shorttopic{Green's Theorem} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{12.7} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S_Vector_GreensTheorem.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+\section{\topic{} \booklink{}}
+\label{sec:greens-theorem}
+%\subsection{Big picture -- The Fundamental Theorems of Vector Calculus}
+In Section \ref{sec:ftcli}, we saw the Fundamental Theorem of Calculus for Line Integrals. There are three more fundamental theorems for vector calculus:
+\begin{itemize}
+    \item Green's Theorem, which relates a line integral of a 2D vector field along a closed curve to a double integral of a function of two variables;
+    \item Gauss' Divergence Theorem, which relates a surface integral of a 3D vector field to a triple integral of a function of three variables; and
+    \item Stokes' Theorem, which generalizes Green's Theorem to relate a line integral of a 3D vector field to the surface integral of a function of three variables.
+\end{itemize}
+A \emph{surface integral} (or \emph{flux integral}) measures the flow of a vector field through a surface. Gauss' Divergence Theorem uses an operation called the \emph{divergence} of a vector field, which essentially measures the change in strength of a vector field. Stokes' Theorem uses an operation called the \emph{curl} of a vector field, which essentially measures how an object in a 3D vector field will rotate as it moves. 
+
+At this point, we are well equipped to study Green's Theorem. This will conclude our course. The other topics mentioned above appear in our textbook. If you are going on to Vector Calculus \& Fourier Series (Math 350), you will see all of this material at the start of the course.
+
+\subsection{Closed curve orientation, notation}
+Suppose $\vec{r}(t)$ parametrizes a closed curve $C$ in the $xy$-plane that doesn't intersect itself. Suppose $C$ encloses a region $R$. As $t$ increases, we can imagine traveling along $C$. Since $C$ doesn't cross itself, $R$ is either always on our left or always on our right. If $R$ is always on the left, we say $C$ goes around $R$ in a counterclockwise (CCW) direction. If $R$ is always on the right, we say $C$ goes around $R$ in a clockwise (CW) direction. We already have special notation for a line integral over a closed curve: $\oint\limits_C\vec{F}\dotp\dvr$. Now we can specify CCW or CW.
+
+
+
+\pagebreak 
+
+
+\subsection{Green's Theorem}
+Green's Theorem allows us to transform a line integral over a closed curve into a double integral over the region enclosed by the curve (and vice versa).
+\begin{thm}[Green's Theorem]
+For $C$ a closed curve traversed counterclockwise around a region $R$, let $\vec{F}=\langle F_1,F_2\rangle$ be a 2-dimensional vector field with continuous partial derivatives on $R$ and $C$. Then
+\[
+    \ointctrclockwise\limits_C \vec{F}\dotp\dvr 
+    = \phantom{\iint\limits_R \left(\pd{F_2}{x}-\pd{F_1}{y}\right)\dA.}
+\]
+\end{thm}
+
+\bigskip 
+
+\noindent Note: If $C$ goes clockwise around $R$, then we can can multiply by $-1$ to reverse direction and then apply Green's Theorem. (This is like $\int\limits_b^af(x)\dx=-\int\limits_a^bf(x)\dx$.) In this case, 
+\[
+    \ointclockwise\limits_C\vec{F}\dotp\dvr
+    = \phantom{-\iint\limits_R\left(\pd{F_2}{x}-\pd{F_1}{y}\right)\dA.}
+\]
+
+\bigskip 
+
+\begin{ex}
+    Let $\vec{F}(x,y)=\langle 4x,3x \rangle$. Let $C$ be the path consisting of straight line segments from $(-1,0)$ to $(5,0)$ to $(5,4)$ to $(-1,4)$ to $(-1,0)$. Is this a CW or CCW path? Use Green's Theorem to compute the line integral of $\vec{F}$ over $C$. For comparison, how would we evaluate this line integral using prior methods?
+%$\displaystyle\int\limits_C\vec{F}\dotp\dvr$. 
+\end{ex}
+
+\vfill \vfill 
+
+\pagebreak 
+
+\begin{ex}
+    Let $\vec{F}(x,y)=\langle xy,\,2x\rangle$ and let $C$ be the clockwise path along a circle of radius 3 centered at the origin, starting and ending at the point $(3,0)$. Use Green's Theorem to evaluate $\displaystyle\oint\limits_C\vec{F}\dotp\dvr$. %What would we have as an integral in $t$ be if we didn't use Green's Theorem?
+\end{ex}
+
+%Let $R$ be a closed bounded region in the $xy$-plane whose boundary $C$ consists of finitely many smooth curves. Let $F_1$ and $F_2$ be continuous functions with continuous partial derivatives everywhere in $R$. Then
+%\begin{ex}
+%Let $\vec{F}=\langle xy,-xy\rangle$ and let $C$ be the unit circle. Evaluate $\ointctrclockwise\limits_C\vec{F}\dotp\dif\vec{r}$ using
+%\begin{enumerate}
+%\item a line integral.
+%\item a double integral in Cartesian coordinates.
+%\item a double integral in polar coordinates.
+%\end{enumerate}
+%\end{ex}
+%\pagebreak
+%\mbox{}\vspace{2.5in}
+\vfill 
+\begin{ex}
+    Compute $\displaystyle\ointctrclockwise\limits_C \vec{F}\dotp\dif\vec{r}$ for $\vec{F}=\langle y^2,4xy+1\rangle$ with $C$ the boundary of the region $x^2\le y\le x$.
+\end{ex}
+%\vspace{2in}
+%Green's Theorem is also a useful tool for computing the area of a region $R$ bounded by the curve $C$. Specifically, the area of $R$ is \[A=\frac{1}{2}\ointctrclockwise\limits_C(-y\dif x+x\dif y),\quad \text{ or to put it another way, }\quad A=\frac{1}{2}\ointctrclockwise\limits_C\vec{F}\dotp\dif\vec{r}, \] where $\vec{F}=\langle -y,x\rangle$ (and $\dif\vec{r}=\langle \dif x,\dif y\rangle$).
+%\begin{ex}
+%Compute the area of the triangle whose vertices are $(0,0)$, $(3,2)$, and $(1,5)$.
+%\end{ex}
+\vfill 
+\pagebreak 
+
+\subsection{General approach to computing line integrals}
+Suppose we want to compute $\displaystyle\int\limits_C\vec{F}\dotp\dvr$ for a vector field $\vec{F}$ and a path $C$. \\ We have a general method along with two specialized shortcuts (FTCLI and Green's Theorem).
+
+\begin{framed} 
+    \noindent \textbf{General method to compute a line integral}
+    
+    \noindent If $\vec{r}(t)$, for $a\le t\le b$, is a parametrization of $C$, then we can evaluate the line integral by \[\int\limits_C\vec{F}\dotp\dvr=\phantom{\int\limits_a^b\vec{F}\dotp\dvr.}\] 
+    If $C$ consists of multiple segments and we have a parametrization for each, then we can evaluate a line integral for each segment and add the results.
+\end{framed} 
+
+\subsection{Specialized shortcuts}
+If $\vec{F}$ is a gradient field, we can use the Fundamental Theorem of Calculus for Line Integrals.
+
+\begin{framed} 
+    \noindent \textbf{Shortcut method to compute a line integral for a gradient vector field}
+    
+    \noindent If $\vec{F}$ is a gradient vector field, we need to find a potential function $f$ of $\vec{F}$. (In other words, $\vec{F}=\nabla f$.) If we have that, and if $C$ starts at $P$ and ends at $Q$, then the FTCLI says
+    \[
+        \int\limits_C \vec{F}\dotp\dvr=\phantom{f(Q)-f(P),}
+    \] 
+    In Section \ref{sec:ftcli}, we saw the ``curl test'' which determines if $\vec{F}$ has a potential function or not.
+\end{framed} 
+
+\noindent If $C$ is a closed path in the plane, then we can use Green's Theorem.
+\begin{framed} 
+    \textbf{Shortcut method to compute a line integral over a closed curve (i.e., circulation)}
+    
+    \noindent If $\vec{F}(x,y)=\langle F_1(x,y),F_2(x,y)\rangle$ is a 2D vector field and $C$ is a closed curve in the plane traversed CCW around a region $R$, then Green's Theorem says 
+    \[
+        \ointctrclockwise\limits_C\vec{F}\dotp\dvr=\phantom{\iint\limits_R\left(\pd{F_2}{x}-\pd{F_1}{y}\right).}
+    \]
+    This often simplifies the problem because any line integral involves a parametrization, which can be messy. Additionally, there may be multiple segments that we need to do line integrals for (like the sides of a rectangle), whereas double integrals are often straightforward to integrate directly (especially when over a rectangle).
+%(For closed paths in 3-space, you'll see Stokes' Theorem in Math 350.) 
+\end{framed} 
+
+\pagebreak 
+
+\subsection{A concrete application: Computing area}
+A surprising application of Green's Theorem is a method to compute the area of a region $R$ in the $xy$-plane.
+
+Suppose a region $R$ is bounded by a curve $C$. Recall that the area of a region $R$ is equal to $\displaystyle\iint\limits_R \dA$. Green's Theorem says 
+\[
+    \iint\limits_R \left(\pd{F_2}{x}-\pd{F_1}{y}\right)\dA = \ointctrclockwise\limits_C \vec{F}\dotp\dif\vec{r}.
+\]
+If we have a vector field $\vec{F}=\langle F_1, F_2\rangle$ such that $\displaystyle\pd{F_2}{x}-\pd{F_1}{y}=1$, then for that $\vec{F}$, we get
+\[
+    \ointctrclockwise\limits_C \vec{F}\dotp\dif\vec{r} = \iint\limits_R \left(\pd{F_2}{x}-\pd{F_1}{y}\right)\dA = %\text{area of $R$}
+\]
+where $C$ goes around $R$ in a counterclockwise direction.
+\begin{ex}
+    Find three vector fields $\vec{F}=\langle F_1(x,y),\,F_2(x,y)\rangle$ where $\displaystyle\pd{F_2}{x}-\pd{F_1}{y}=1$.
+\end{ex}
+
+\vspace{1in}
+
+%In particular, the area of $R$ is 
+%\begin{equation}
+%A=\frac{1}{2}\ointctrclockwise\limits_C(-y\dif x+x\dif y),\quad \text{ or to put it another way, }\quad A=\frac{1}{2}\ointctrclockwise\limits_C\vec{F}\dotp\dif\vec{r}, \end{equation}
+%where $\vec{F}=\langle -y,x\rangle$ (and $\dif\vec{r}=\langle \dif x,\dif y\rangle$).
+
+\begin{ex}\label{ex:triangle-area}
+    Use Green's Theorem to compute the area of the triangle $T$ whose vertices are $(0,0)$, $(3,2)$, and $(1,5)$.
+\end{ex}
+
+\pagebreak 
+
+\subsection{A formula for the area of a simple polygon}
+Note that we can find the area of a triangle by just knowing the lengths of the three sides. Fortunately, Green's Theorem can help us with polygons with any number of sides!
+
+Suppose you have a simple polygon $P$ with $n$ sides in the plane. (``Simple'' means it doesn't intersect itself and has no holes.) $P$ has $n$ vertices. Label one vertex $(x_0,y_0)$, travel CCW to the next vertex, label if $(x_1,y_1)$, travel CCW again, etc., all the way around until you return to the starting vertex. The $n$ vertices are $(x_0,y_0), (x_1,y_1),\dots,(x_{n-1},y_{n-1})$. To make the formula notation easier, let $(x_n,y_n)$ be the starting point. (Thus, $(x_n,y_n)=(x_0,y_0)$). 
+
+\vspace{2in} 
+
+With Green's Theorem, we can compute the area of $P$ by computing the sum of $n$ line integrals of the vector field $\vec{F}(x,y)=\langle 0,x\rangle$ over the $n$ line segments. The line integral over the line segment from $(x_k,y_k)$ to $(x_{k+1},y_{k+1})$ evaluates to $(x_{k+1}+x_{k})(y_{k+1}-y_{k})/2$. Adding, we have our result.
+
+\begin{thm}[Area of a polygon]
+    For $P$ an $n$-sided simple polygon in the $xy$-plane described as above with vertices $(x_0,y_0)$, $(x_1,y_1)$, $\dots$, $(x_n,y_n)$ in CCW order, 
+    \[
+        \text{area}(P) = \phantom{\sum\limits_{k=0}^{n-1} \dfrac{(x_{k+1}+x_k)(y_{k+1}-y_k)}{2}.}
+    \]
+\end{thm}
+
+\bigskip 
+
+\begin{ex}
+    Demonstrate this formula with the triangle $T$ from Exercise~\ref{ex:triangle-area} which has vertices $(0,0)$, $(3,2)$, and $(1,5)$. 
+\end{ex} 
+\vfill 
+
+

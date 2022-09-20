@@ -1,0 +1,137 @@
+\newlecture
+\setcounter{chapter}{11}
+\setcounter{section}{3}
+
+
+%\def\textbookchapter{Chapter 11: Multiple Integrals}
+\def\coursetopicnumber{III}
+\def\topic{Applications of Double Integrals} % this is the printed title
+\def\shorttopic{Applications of double integrals} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{11.4} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-11-4-Double-Integrals-Applications.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+\section{\topic{} \booklink{}}
+\label{sec:double-integral-apps}
+In single-variable calculus, we can use definite integrals to compute the average value of a function on an interval, the area of a region between two curves, and the mass of a one-dimensional object given a density function. We'll push these ideas to multivariable functions.
+
+\subsection{Computing the size of the domain}
+\subsubsection{Single-variable}
+\begin{ex}
+    For an interval $[a,b]$, draw and interpret $\displaystyle\int\limits_a^b \dx$.
+\end{ex}
+
+\vspace{1in}
+
+\subsubsection{Multivariable}
+\begin{ex}
+    For a general region $R$, draw and interpret $\displaystyle\iint\limits_R \dA$.
+\end{ex}
+
+\vfill 
+
+\begin{ex}
+    Set up an iterated integral to compute the area of the region in the plane enclosed by circles of radius 3 and 4 centered at the origin.
+\end{ex}
+
+\vfill
+
+\pagebreak 
+
+\subsection{Average value of a function}
+\subsubsection{Single-variable}
+The \emph{average value} of a function $f(x)$ on an interval $I=[a,b]$ is
+$f_{avg}=\phantom{\displaystyle\dfrac{1}{b-a}\int\limits_a^b f(x)\dx.}$
+
+\vspace{1.5in}
+
+\subsubsection{Multivariable}
+The \emph{average value} of a function $f(x,y)$ on a region $R$ is 
+$f_{avg}=\phantom{\displaystyle\dfrac{1}{\text{area}(R)}\iint\limits_R f\dA.}$
+
+\vspace{1.5in}
+
+\noindent Note: Since $\text{area}(R)=\displaystyle\iint\limits_R \dA$, we can rewrite the average value of $f$ on $R$ as 
+\vspace{.5in}
+
+\begin{ex}
+    Set up an iterated integral to compute the average value of the function $f(x,y)=e^{-x^2-y^2}$ over the portion of the disc of radius 3 centered at the origin with $x\ge0$.
+\end{ex}
+
+\pagebreak 
+
+\subsection{Domain splitting}
+\subsubsection{Single-variable}
+Suppose $a<b<c$ and that $f$ is continuous on $[a,c]$. Then $\displaystyle\int\limits_a^c f(x)\dx = \phantom{\int\limits_a^b f(x)\dx + \int\limits_b^c f(x)\dx.}$
+
+\vspace{1in}
+
+\subsubsection{Multivariable}
+Suppose $R$ is the union of non-overlapping regions $R_1$ and $R_2$. Then for any function $f$ continuous on $R$, \\ \smallskip 
+
+$\displaystyle\iint\limits_R f\dA = \phantom{\iint\limits_{R_1}f\dA + \iint\limits_{R_2}f\dA.}$
+
+\vspace{1in}
+
+\begin{ex}
+    Consider the region $T$ consisting of all points in the triangle formed by the points $(0,0)$, $(6,2)$, and $(3,12)$.  For $f(x,y)=e^{xy}$, write $\displaystyle\iint\limits_T f\dA$ in terms of iterated integrals.
+\end{ex}
+
+\pagebreak 
+
+\subsection{Volume of a region between surfaces}
+\subsubsection{Single-variable}
+If $g(x)\le h(x)$ for all $x$ values in an interval $[a,b]$, then the area of the region enclosed by the graphs of $y=g(x)$ and $y=h(x)$ over $[a,b]$ is \\ 
+\smallskip 
+
+\noindent Area = $\phantom{\displaystyle\int\limits_a^b \left(h(x)-g(x)\right)\dx.}$
+\vspace{.5in}
+
+\subsubsection{Multivariable}
+If $g(x,y)\le h(x,y)$ for all points $(x,y)$ in a region $R$, then the volume of the region enclosed by the graphs of $z=g(x,y)$ and $z=h(x,y)$ over $R$ is \\
+\smallskip 
+
+\noindent Volume = $\phantom{\displaystyle\iint\limits_R\left(h(x,y)-g(x,y)\right)\dA}$
+\vspace{1in}
+
+Note: If the surfaces $z=g(x,y)$ and $z=h(x,y)$ enclose a region, we will typically need to find the intersection of the surfaces to determine the region $R$. We do this just as we did in the single variable case, equating the two functions and solving, thereby determining the boundary of $R$.
+\begin{ex}
+    Set up an iterated integral to compute the volume of the region enclosed by the graphs of $z=x^2+y^2$ and $z=2-x^2-y^2$.
+\end{ex}
+
+\vfill 
+
+\pagebreak 
+
+\subsection{Mass of an object}
+\subsubsection{Single-variable}
+Suppose we have an object that lies along the $x$-axis from $x=a$ to $x=b$. Suppose the density of the object is $\delta(x)$ (units of mass / units of $x$) at position $x$. Then the object has\\
+\smallskip 
+
+\noindent mass $= \displaystyle\int\limits_a^b \delta(x)\dx$
+\vspace{.3in}
+
+\subsubsection{Multivariable}
+Suppose we have an object that fills a region $R$ in the $xy$-plane. Suppose the density of the object is $\delta(x,y)$ (units of mass / units of area) at position $(x,y)$. Then the object has \\
+\smallskip 
+
+\noindent mass $ = \displaystyle\iint\limits_R \delta(x,y)\dA$
+
+\vspace{.3in}
+Units are our guide! We can multiply together the units of the terms in the integral to get the units of the result.
+\begin{ex}
+    Suppose a flat disc of radius 3 cm has a density of $\frac{1}{1+r}$ grams per cm$^2$ for all points a distance of $r$ cm from the center. Set up an iterated integral to compute the mass of the disc.
+\end{ex}
+\vfill
+
+\begin{ex}
+    Same disc, but suppose the density at the point $(x,y)$ is $(3+x)$ g/cm$^2$. (The disc is centered at the origin.) Set up an iterated integral to compute the mass of the disc. Units?
+\end{ex}
+\vfill 

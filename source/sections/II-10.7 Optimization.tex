@@ -1,0 +1,184 @@
+\newlecture
+
+\setcounter{section}{6}
+%\def\textbookchapter{Chapter 10: Derivatives of Multivariable Functions}
+\def\coursetopicnumber{II}
+\def\topic{Optimization} % this is the printed title
+\def\shorttopic{Optimization} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{10.7} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-10-7-Optimization.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+\thispagestyle{plain}
+\topstuff
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\section{\topic{} \booklink{}}
+\label{sec:optimization}
+\subsection{Optimization with single-variable functions}
+
+Our goal here is to compute local maxima/minima of functions. We begin with single-variable functions. We'll assume these functions are continuous on their domains.
+
+\begin{defn}[Critical points]
+    A function $f(x)$ has a \emph{critical point} at $x=a$ if $f'(a)=0$ or if $f'(a)$ does not exist.
+\end{defn}%\vspace{.6in}
+
+\begin{prop}
+    If $f(x)$ has a local extremum (i.e., a minimum or a maximum) at $x=a$, then $x=a$ is a critical point of $f$.
+\end{prop}
+
+Therefore, to find local extrema of a function $f(x)$, we can find the critical points of $f$ and then classify them. Caution: some critical points are neither local minima nor maxima! We call them \emph{terrace points}.
+
+In Calculus I, we saw two methods for classifying critical points: the number line method; and the second derivative test. We'll focus on the latter here.
+\begin{prop}[Second Derivative Test for Single-Variable Functions]
+    If $f(x)$ has a critical point at $x=a$, then
+    \begin{itemize}
+        \item if $f''(a)>0$, then %$f(x)$ has a local minimum at $x=a$;
+        \bigskip
+        \item if $f''(a)<0$, then %$f(x)$ has a local maximum at $x=a$;;
+        \bigskip
+        \item if $f''(a)=0$, then %this test is inconclusive. ($f(x)$ may have a local minimum, a local maximum, or a terrace point at $x=a$.)
+        \bigskip
+    \end{itemize}
+\end{prop}
+\bigskip 
+
+Why?! One way to see why the second derivative test makes sense is to consider the degree-two Taylor polynomial of $f(x)$ at $x=a$ in the case where $f'(a)=0$. When this occurs, the Taylor polynomial is
+\begin{align*} 
+    T_2(x) 
+    &= f(a) + f'(a)\cdot(x-a)+\frac{f''(a)}{2}\cdot(x-a)^2 \\
+    & = f(a) + \frac{f''(a)}{2}\cdot(x-a)^2.
+\end{align*}
+Thus, for $x$-values near $x=a$, 
+\[
+    f(x)\approx T_2(x)=f(a)+\frac{f''(a)}{2}\cdot(x-a)^2.
+\]
+If $f''(a)>0$, this is an upward-opening parabola with vertex at $(a,f(a))$. \\ 
+If $f''(a)<0$, this is a downward-opening parabola with vertex at $(a,f(a))$.
+\pagebreak 
+
+\subsection{Optimization with multivariable functions}
+Now we work with multivariable functions. We'll use $f(x,y)$, though the methods generalize for any number of variables. To simplify things, we'll assume our functions are continuous and differentiable where defined.
+\begin{defn}[Open interval]
+    An \emph{open interval} of radius $r$ centered at a real number $a$ on the real number line is the set of $x$-values that are less than $r$ units away from $a$. 
+\end{defn}
+
+\begin{defn}[Open disc]
+    An \emph{open disc} of radius $r$ around a point $P=(a,b)$ in the $xy$-plane is the set of points $Q$ that are less than $r$ units away from $P$. Equivalently, it is the set of points $Q=(x,y)$ such that $|\vec{PQ}|<r$.
+\end{defn}
+
+\begin{ex}
+    Pictures!
+\end{ex}
+
+\vspace{1.5in}
+
+\begin{defn}[Local maximum value]
+    A function $f(x,y)$ has a \emph{local maximum} (or \emph{relative maximum}) at a point $(x,y)=(a,b)$ if there is some open disc with positive radius $r$ centered at $(a,b)$ such that $f(a,b)\ge f(x,y)$ for all points $(x,y)$ in the disc. The \emph{local maximum value of $f$ at $(a,b)$} is $f(a,b)$.
+\end{defn}
+
+\begin{defn}[Local minimum value]
+    A function $f(x,y)$ has a \emph{local minimum} (or \emph{relative minimum}) at a point $(x,y)=(a,b)$ if there is some open disc with positive radius $r$ centered at $(a,b)$ such that $f(a,b)\le f(x,y)$ for all points $(x,y)$ in the disc. The \emph{local minimum value of $f$ at $(a,b)$} is $f(a,b)$.
+\end{defn}
+
+\noindent As before, local minimum and maximum values are collectively called \emph{local extreme values} or \emph{local extrema}. Standard examples are upward-opening and downward-opening elliptic paraboloids.
+
+\vspace{1in}
+
+For this course, we will focus primarily on finding and classifying local extrema. We'll see some examples where we can classify global extrema as well. As before, we start with critical points.
+
+\begin{defn}[Critical points]
+    A differentiable function $f(x,y)$ has a \emph{critical point} at $(x,y)=(a,b)$ if 
+    \[
+        \nabla f(a,b)=\vec{0}.
+    \]
+\end{defn}
+\noindent In other words, we need both partial derivatives to equal 0.
+
+\pagebreak 
+
+\begin{ex}\label{ex:find-crit-pts-1}
+    Find the critical points of $f(x,y)=x^2+2y^2-4x+4y+6$.
+\end{ex} 
+
+\vspace{2in}
+
+\begin{ex}\label{ex:find-crit-pts-2}
+    Find the critical points of $f(x,y)=xy(x-2)(y+6)$.
+\end{ex}
+
+\vfill
+
+\pagebreak 
+
+\begin{prop}
+    If $f(x,y)$ has a local extremum at $(x,y)=(a,b)$, then $(a,b)$ is a critical point of $f(x,y)$.
+\end{prop}
+
+Therefore, to find local extrema of a function $f(x,y)$, we can find its critical points and then analyze them. Caution: some critical points are neither local minima nor maxima. We call them \emph{saddle points}.
+\vspace{1in}
+
+The second derivative test for multivariable functions helps! First, we need a discriminant.
+\begin{defn}
+    For a function $f(x,y)$, its \emph{discriminant} $D(x,y)$ is defined as \[D(x,y)=f_{xx}(x,y) f_{yy}(x,y) - f_{xy}(x,y)f_{yx}(x,y).\]
+\end{defn}
+
+As we have seen, if the second partials of $f$ are continuous, then Clairaut's Theorem says $f_{xy}(x,y)=f_{yx}(x,y)$, so we can write the discriminant as 
+\[
+    D(x,y)=f_{xx}(x,y)f_{yy}(x,y)-f_{xy}(x,y)^2.
+\]
+\medskip 
+
+\begin{prop}[Second Derivative Test for Multivariable Functions]
+    For a function $f(x,y)$ and its discriminant $D(x,y)$, if $(a,b)$ is a critical point of $f(x,y)$, then:
+    \begin{itemize}
+        \item If $D(a,b)>0$ and $f_{xx}(a,b)>0$, then $f$ has \\ %a local minimum at $(a,b)$.\\
+        \item If $D(a,b)>0$ and $f_{xx}(a,b)<0$, then $f$ has \\ %a local maximum at $(a,b)$.\\
+        \item If $D(a,b)<0$, then $f$ has \\ %a saddle point at $(a,b)$.\\
+        \item If $D(a,b)=0$, then \\ %the test is inconclusive.
+    \end{itemize}
+\end{prop}
+
+\vfill 
+
+Why?! Suppose $(0,0)$ is a critical point of $f$. Then, for $a=f_{xx}(0,0)/2$, $b=f_{xy}(0,0)$, $c=f_{yy}(0,0)/2$, the quadratic approximation (from Section 10.4) of $f(x,y)$ at $(0,0)$ is \[Q(x,y)=f(0,0)+ax^2+bxy+cy^2.\] The quantity $ax^2+bxy+cy^2$ is called a \emph{binary quadratic form}. An analysis into what it looks like -- always $\ge0$, always $\le0$, or neither? -- leads to the conditions above.
+
+\pagebreak 
+
+\begin{defn}
+    Given a function $f(x,y)$, the \emph{Hessian matrix} is the $2\times2$ matrix \[\begin{pmatrix}f_{xx}(x,y) & f_{xy}(x,y) \\ f_{yx}(x,y)&f_{yy}(x,y)\end{pmatrix}.\]
+\end{defn}
+
+Then $D(x,y)$, the discriminant of $f(x,y)$, is the determinant of the Hessian matrix of $f(x,y)$.
+
+\begin{ex}
+    For $f(x,y)=x^2+2y^2-4x+4y+6$, we found in Exercise~\ref{ex:find-crit-pts-1} that $f$ has one critical point at $(x,y)=(2,-1)$. Use the second derivative test to classify it.
+\end{ex}
+
+\vfill
+
+\begin{ex}
+    For $f(x,y)=xy(x-2)(y+6)$, we found in Exercise \ref{ex:find-crit-pts-2} that $f$ has five critical points. Two of them are $(1,-3)$ and $(2,0)$. Classify them.
+\end{ex}
+
+\vfill\vfill
+
+Note: In Section \ref{sec:linearization}, Exercise \ref{ex:first-quadratic-approx}, we found the quadratic approximation of $f(x,y)=xy(x-2)(y+6)$ at $(x,y)=(1,-3)$ is $Q(x,y)=9-9(x-1)^2-(y+3)^2$. Can you see why $Q(x,y)$ has a maximum at $(x,y)=(1,-3)$?
+
+\pagebreak 
+
+\subsection{Applications}
+For applications, typically we want to minimize or maximize some sort of quantity, and there may be certain constraints that we need to consider. The following exercises outline the general process.
+\begin{ex}
+    A shipping company handles rectangular boxes provided the sum of the length, width, and height of the box does not exceed 96 inches. Find the dimensions of the box that meets this condition with the largest volume.
+\end{ex}
+\pagebreak 
+\begin{ex}
+    Find the point(s) on the plane $x+2y+3z=6$ closest to the point $(x,y,z)=(1,0,0)$.
+\end{ex}
+
+\vfill 
+For more examples, see \href{https://activecalculus.org/vector/S-10-7-Optimization.html}{Section 10.7 in our textbook} and/or \href{https://tutorial.math.lamar.edu/Classes/CalcIII/RelativeExtrema.aspx}{Paul's Notes}.

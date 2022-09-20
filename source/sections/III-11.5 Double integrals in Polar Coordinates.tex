@@ -1,0 +1,124 @@
+\newlecture
+\setcounter{chapter}{11}
+\setcounter{section}{4}
+
+%\def\textbookchapter{Chapter 11: Multiple Integrals}
+\def\coursetopicnumber{III}
+\def\topic{Double Integrals in Polar Coordinates} % this is the printed title
+\def\shorttopic{Double integrals, polar coordinates} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{11.5} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-11-5-Double-Integrals-Polar.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+(We are covering Section 11.5, which is on double integrals in polar coordinates, before we cover Section 11.4, which is on applications of double integrals.)
+\section{\topic{} \booklink{}}
+\label{sec:double-int-polar}
+\subsection{Polar coordinates}
+Our usual way of representing a point $P$ in the $xy$-plane is with \emph{Cartesian} (or \emph{rectangular}) coordinates $x$ and $y$. For instance, if $P=(5,2)$, then the origin and $P$ are opposite corners on a $5\times2$ rectangle with edges along the $x$- and $y$-axes.
+\vspace{1.5in}
+
+We can use circles in place of rectangles. This leads to \emph{polar} coordinates $r$ and $\theta$. Any point $P$ lies on a circle of radius $r\ge0$ centered at the origin at an angle $\theta$ above the positive $x$-axis.
+
+\vfill
+
+\begin{ex}
+    Convert $(r,\theta)=(7,\pi/3)$ to rectangular coordinates $(x,y)$. Then convert $(x,y)=(-4,0)$ to polar coordinates $(r,\theta)$.
+\end{ex}
+
+\vspace{1in}
+
+\pagebreak 
+
+\subsection{Describing regions with polar coordinates}
+\begin{ex}
+    Draw the region $R$ of points $P$ that have $1\le r\le 2$ and $\pi/4\le\theta\le \pi$.
+\end{ex}
+
+\vspace{1.5in}
+
+\begin{ex}
+    Use polar coordinates to describe the region between circles of radii 3 and 5 centered at the origin.
+\end{ex}
+
+\vspace{2in}
+
+%\subsection{Double integration over a polar region}
+\subsection{Area of a subrectangle in rectangular coordinates}
+Suppose you're at the point $P=(x,y)$. Draw a rectangle of width $\Delta x$ and height $\Delta y$ at $P$. The area of the rectangle is 
+\[
+    \Delta A = \hspace{7in} 
+\]
+
+\vfill 
+Thus, with rectangular coordinates, the double integral of a function $f$ over a region $R$ is \bigskip 
+
+\[
+    \iint\limits_R f \dA = \hspace{3in} 
+\]
+
+\vspace{1in}
+
+\pagebreak 
+
+\subsection{Area of a ``subrectangle'' in polar coordinates}
+Suppose you're at the point $P=(r,\theta)$. Draw a polar ``rectangle'' with angle $\Delta \theta$ and radius $\Delta r$. Its area is \[\Delta A = \hspace{7in}\]
+\vspace{2in}
+
+Thus, with polar coordinates, the double integral of a function $f$ over a region $R$ is \bigskip 
+
+\[
+    \iint \limits_R f \dA = \hspace{3in} 
+\]
+
+\medskip 
+
+\subsection{Evaluating double integrals using polar coordinates}
+\begin{framed}
+    \noindent 
+    To evaluate a double integral of a function $f$ over a region $R$, the choice of coordinates (rectangular or polar) depends entirely on the region $R$. It does not depend on the function $f$.
+\end{framed}
+\bigskip 
+
+Essentially, if $R$ can be easily described using polar coordinates, which typically occurs when $R$ contains all of or a portion of a disc, we will do the following: 
+\begin{itemize} 
+    \item describe $R$ with inequalities for $r$ and $\theta$; 
+    \item write $f$ using polar coordinates (using $x=r\cos\theta$, $y=r\sin\theta$); 
+    \item write $\dA=r \dr \dtheta$ (or $\dA=r \dtheta \dr$); and 
+    \item take the iterated integral approach, using the bounds from the inequalities for $r$ and $\theta$ as the iterated integral endpoints, matching the order of the inner and outer integrals with the order of $\dr$ and $\dtheta$.
+\end{itemize} 
+\pagebreak 
+
+\begin{ex}
+    Let $R$ be the top left quarter of a disc of radius 2 centered at the origin. Describe $R$ with rectangular coordinates and with polar coordinates. Then, for $f(x,y)=3x+1$, evaluate $\iint\limits_R f\dA$ using either rectangular or polar coordinates. 
+\end{ex}
+\vfill
+
+\begin{ex}
+    Find the volume of the solid bounded by the paraboloid $z=9-x^2-y^2$ and the $xy$-plane.
+\end{ex}
+\vfill 
+
+\pagebreak
+
+\begin{ex}
+    Evaluate the following iterated integral by first converting it to polar coordinates:
+    \medskip 
+    
+    \noindent $\displaystyle \int\limits_0^{\sqrt{2}/2} \int\limits_x^{\sqrt{1-x^2}} 4xy\dy\dx$
+\end{ex}
+\vfill 
+
+\begin{ex}
+    Evaluate $\displaystyle\int\limits_0^6 \int\limits_{-\sqrt{36-x^2}}^{\sqrt{36-x^2}} \ee^{-3x^2-3y^2}\dy\dx$.
+\end{ex}
+\vfill 
+
+%\begin{ex}
+%    Find the volume of the region beneath the surface $z=xy+10$ and above the annular region $R$ described with polar coordinate inequalities by $R=\{(r,\theta) : 2\le r\le 4,\, 0\le \theta\le 2\pi\}$.
+%\end{ex}

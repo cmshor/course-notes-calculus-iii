@@ -1,0 +1,192 @@
+\newlecture
+
+\setcounter{section}{6}
+%\def\textbookchapter{Chapter 9: Multivariable and Vector Functions}
+\def\coursetopicnumber{I}
+\def\topic{Derivatives and Integrals of Vector-Valued Functions} % this is the printed title
+\def\shorttopic{Calculus of vector-valued functions} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{9.7} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-9-7-Vector-Valued-Functions-Derivatives.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+
+\section{\topic{} \booklink{}}
+\label{sec:vector-valued-fns-calculus}
+Now that we have vector-valued functions, we need to figure out how to do calculus with them. This means understanding limits, derivatives, and integrals. We'll lean heavily on material from Calculus I/II (Math 133/134). %Then we'll think about derivatives geometrically. As an application, we'll learn about projectile motion.
+
+\subsection{Limits of vector-valued functions}
+We start with a vector-valued function  
+\[
+    \vec{r}(t)=x(t)\ii +y(t)\jj +z(t)\kk.
+\] 
+Note that $\ii$, $\jj$, $\kk$ don't change, so we treat them like constants (which is what they are!).
+%\subsection{Limits}
+If $\lim\limits_{t\to a}x(t)=l$,\, $\lim\limits_{t\to a}y(t)=m$,\, $\lim\limits_{t\to a}z(t)=n$,\, then 
+\begin{align*}
+    \lim\limits_{t\to a}\vec{r}(t)
+    &=\lim\limits_{t\to a}\left(x(t)\ii +y(t)\jj +z(t)\kk \right)\\
+    &=\ii \lim\limits_{t\to a}(x(t))+\jj \lim\limits_{t\to a}(y(t))+\kk \lim\limits_{t\to a}(z(t))\\ \\
+    &= % l\ii +m\jj +n\kk 
+\end{align*}
+%\vspace{.5in}
+
+If any of $\lim\limits_{t\to a}x(t)$, $\lim\limits_{t\to a}y(t)$, $\lim\limits_{t\to a}z(t)$ do not exist, then \phantom{ $\lim\limits_{t\to a}\vec{r}(t)$ does not exist.}
+\vspace{.5in}
+
+Important: If $f(t)$ is continuous at $t=a$, then $\lim\limits_{t\to a}f(t) = \phantom{f(a).}$
+\medskip 
+
+All of our elementary functions from Calculus I, along with algebraic combinations of them, are continuous wherever they are defined. 
+
+\begin{ex}
+    Let $\vec{r}(t)=\left\langle 12\sqrt[3]{t}, 1/t, 2+\ee^t\right\rangle$. Compute $\lim\limits_{t\to 1}\vec{r}(t) $ and $\lim\limits_{t\to 0}\vec{r}(t)$.
+\end{ex}
+
+\vspace{2in}
+
+\subsection{Derivatives of vector-valued functions}
+The derivative of $\vec{r}(t)$ is 
+\[
+    \vec{r}\,'(t)=\dd{t}(\vec{r}(t))=\dd{t}\left(x(t)\ii +y(t)\jj +z(t)\kk \right)=\phantom{x'(t)\ii +y'(t)\jj +z'(t)\kk  = \langle x'(t),\, y'(t),\, z'(t)\rangle.}
+\]
+\bigskip 
+
+\noindent Higher-order derivatives (i.e., second derivative, third derivative, etc.) work exactly as expected!
+
+\begin{ex}
+    Let $\vec{r}(t)=\left\langle 12\sqrt[3]{t}, 1/t, 2+\ee^t\right\rangle$. Compute $\vec{r}\,'(t)$ and $\vec{r}\,'(1)$.
+\end{ex}
+
+\vspace{1in}
+
+\subsection{Integrals of vector-valued functions}
+The indefinite integral of $\vec{r}(t)$ is
+\begin{align*}
+    \int \vec{r}(t)\dt &= \int\left(x(t)\ii +y(t)\jj +z(t)\kk \right)\dt \hspace{3in} \mbox{}\\ \\
+    &= 
+\end{align*}
+\bigskip
+
+\noindent The definite integral of $\vec{r}(t)$ from $t=a$ to $t=b$ is
+\begin{align*}
+    \int\limits_a^b \vec{r}(t)\dt &= \int\limits_a^b\left(x(t)\ii +y(t)\jj +z(t)\kk \right)\dt \hspace{3in}\\ \\
+    &= \\
+\end{align*}
+
+\begin{ex}
+    Let $\vec{r}(t)=\left\langle 12\sqrt[3]{t}, 1/t, 2+\ee^t\right\rangle$. Compute $\displaystyle\int\vec{r}(t)\dt$. %and $\displaystyle\int\limits_{1}^{8}\vec{r}(t)\dt$.
+\end{ex}
+
+\vfill
+
+\pagebreak 
+
+\subsection{Derivatives visualized: Tangent vectors}
+Given a vector-valued function $\vec{r}(t)$, its derivative $\vec{r}\,'(t)$ is called a \emph{tangent vector}. Visually, $\vec{r}(t)$ traces out a curve in space. At any particular time $t=t_0$, the vector $\vec{r}\,'(t_0)$ lies on the tangent line to the point on the curve at $t=t_0$, pointing in the direction of motion at that time.
+
+\begin{ex}
+    Let $\vec{r}(t)=\langle \cos(t),\sin(t)\rangle$. Sketch $\vec{r}(t)$ on $[0,2\pi]$ and mark the point on the graph where $t=\pi/6$. Compute $\vec{r}\,'(\pi/6)$, the tangent vector at $t=\pi/6$, and draw it on the graph. Find a parametrization $\vec{L}(t)$ for the corresponding tangent line.
+\end{ex}
+
+\vfill 
+
+\begin{ex}
+    In the above exercise, our tangent line parametrization meets the circle at $t=0$. How would we modify it so that it meets the circle at $t=\pi/6$?
+\end{ex}
+
+\vspace{.6in}
+
+We will be interested in vector-valued functions that describe smooth motion. We want to avoid instantaneous changes of direction, and we want graphs without any sharp points. 
+\vspace{.8in}
+
+\begin{defn}[Differentiable]
+    We say a function $\vec{r}(t)$ is \emph{differentiable} on an interval of $t$ values if \phantom{$\vec{r}\,'(t)$ is defined everywhere in the interval.}
+\end{defn}
+
+\vspace{.5in}
+
+\begin{defn}[Smooth]
+    We say a function $\vec{r}(t)$ is \emph{smooth} on an interval of $t$ values if \phantom{$\vec{r}(t)$ is differentiable and $\vec{r}\,'(t)\ne\vec{0}$ on the interval.}
+\end{defn}
+
+\vspace{.5in}
+
+\subsection{Position, velocity, acceleration, speed}
+If $\vec{r}(t)$ gives the position of an object at time $t$, then $\vec{v}(t)=\vec{r}\,'(t)$ is a \emph{velocity} vector! It points in the direction of motion, and its magnitude is the object's \emph{speed}. In other words, the object's speed at time $t$ is $|\vec{r}\,'(t)|$.
+
+Units? From Calculus I, we know that in general, for a function $f(x)$,
+\begin{center}the units of $f'(x)$ are \hspace{3in}\mbox{}\end{center}
+\bigskip
+
+Thus, the units of $\vec{r}\,'(t)$ and $|\vec{r}\,'(t)|$ are units of $\vec{r}(t)$ per unit of $t$. (E.g., ft/s.)
+
+Once we have the velocity vector, we can take another derivative to get $\vec{a}(t)=\vec{r}\,''(t)$, the object's \emph{acceleration} vector. Its units are units of $\vec{r}(t)$ per units of $t$ squared. (E.g., ft/s$^2$.)
+
+
+\begin{ex}
+    Let $\vec{r}(t)=\langle 3\cos(t),3\sin(t)\rangle$ represent the position (measured in feet) of an object at time $t$ (measured in seconds).
+    \begin{enumerate}
+        \item Compute the object's velocity and acceleration vectors at time $t$.
+        \item How fast is the object moving at time $t$? Units?
+        \item Sketch $\vec{r}(t)$. For $t_0=3\pi/2$, mark the point on $\vec{r}(t)$ with $t=t_0$. Sketch $\vec{v}(t_0)$ and $\vec{a}(t_0)$ at that point.
+        \item Is the direction of the acceleration vector realistic?
+        \end{enumerate}
+\end{ex}
+\vfill
+
+\begin{ex}
+    Say an object's position is given by the vector-valued function $\vec{r}(t)=\langle 2t,t^2,t-3\rangle$. At what time(s), if any, is the object at the point $(-4,4,-5)$? Parametrize the tangent line at that point.
+\end{ex}
+\vspace{1in}
+
+\pagebreak 
+
+\subsection{Projectile motion}
+Just as we did in Calculus I/II, we can use derivatives and integrals to move back and forth between position, velocity, and acceleration.
+
+\begin{ex}
+    Suppose that on Planet X, we have a downward force due to gravity given by 12 feet per second per second. Suppose you stand on a 30-foot tall ladder and launch a rock at an angle of $30^\circ$ above horizontal with an initial velocity of 48 feet per second. Find the object's velocity and position vectors.
+\end{ex}
+
+\vfill
+
+\begin{ex}
+    Still on Planet X, how high did the rock get? How far did the rock travel horizontally before it hit the ground? How fast was the rock moving when it hit the ground?
+\end{ex}
+\vfill
+
+
+
+\pagebreak 
+\subsection{Vector-valued function derivative rules}
+Let $\vec{u}(t)$ and $\vec{v}(t)$ be differentiable vector-valued functions, and let $f(t)$ be a differentiable scalar-valued function. Let $\vec{c}$ be a constant vector. Our usual derivative rules work as you'd expect!
+\bigskip
+
+\newcommand{\listspace}{\vspace{.2in}}
+%\hspace{-.6in}
+%\begin{minipage}{.8\textwidth}
+%\begin{multicols}{2}
+\begin{enumerate}[label=\arabic*.]
+    \item $\displaystyle\dd{t}(\vec{c})=$\listspace
+    \item $\displaystyle\dd{t}\Big(\vec{u}(t)+\vec{v}(t)\Big)=$\listspace
+    \item $\displaystyle\dd{t}\Big(f(t)\,\vec{u}(t)\Big)=$\listspace
+    \item $\displaystyle\dd{t}\Big(\vec{u}\big(f(t)\big) \Big)=$\listspace
+    \item $\displaystyle\dd{t}\Big(\vec{u}(t)\dotp \vec{v}(t) \Big)=$\listspace
+    \item $\displaystyle\dd{t}\Big(\vec{u}(t)\times\vec{v}(t) \Big)=$\listspace
+\end{enumerate}
+%\end{multicols}
+%\end{minipage}
+%
+\begin{ex}
+    For $\vec{r}(t)=\left\langle \ee^t\cos(t),\ee^t\sin(t),3\ee^t\right\rangle$, suppose $\vec{r}(t)$ gives the position of an object at time $t$. Find a formula for the speed of the object at time $t$.
+\end{ex}
+\vfill
+%\vspace{.3in}
+

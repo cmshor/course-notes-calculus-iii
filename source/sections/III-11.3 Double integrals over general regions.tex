@@ -1,0 +1,160 @@
+\newlecture
+\setcounter{chapter}{11}
+\setcounter{section}{2}
+
+%\def\textbookchapter{Chapter 11: Multiple Integrals}
+\def\coursetopicnumber{III}
+\def\topic{Double Integrals over General Regions} % this is the printed title
+\def\shorttopic{Double integrals, general regions} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{11.3} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-11-3-Double-Integrals-General.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+\section{\topic{} \booklink{}}
+\label{sec:double-int-general-region}
+
+\subsection{Double integrals over rectangles}
+The simplest kind of region $R$ in the $xy$-plane is a rectangle. Any rectangle can be described as the set of points $(x,y)$ where 
+\[
+    a\le x\le b \quad \text{ and } \quad c\le y\le d
+\] 
+for some constants $a,b,c,d$ with $a\le b$ and $c\le d$. 
+
+In order to compute the double integral of some function $f(x,y)$ over such a rectangle $R$, we use \emph{iterated integrals} as described in Section~\ref{sec:double-integral-rectangle}:
+\[
+    \iint\limits_R f(x,y)\dA 
+    = \int\limits_{y=c}^{y=d} \left(\,\int\limits_{x=a}^{x=b} f(x,y)\dx\right) \dy 
+    = \int\limits_{x=a}^{x=b}\left(\,\int\limits_{y=c}^{y=d} f(x,y)\dy\right)\dx.
+\] 
+This gives us the (signed) volume under the graph of $z=f(x,y)$ over the region $R$.
+
+Often we will get lazy and write this without parentheses and/or without equal signs in the endpoints of the integral:
+\[
+    \iint\limits_R f(x,y)\dA 
+    = \int\limits_{c}^{d} \int\limits_{a}^{b} f(x,y)\dx \dy 
+    = \int\limits_{a}^{b} \int\limits_{c}^{d} f(x,y)\dy \dx .
+\] 
+\textbf{Note that the order of the differentials matters. It lets us know which variables our endpoints represent.}
+
+\subsection{Descriptions of general regions}
+Before we can think about double integrals over general regions, we need to see how to describe general regions with inequalities.
+
+\begin{center}
+    \textbf{The key to doing this well is sketching graphs and labeling functions \\ and intersection points.}
+\end{center} 
+This process is similar to those of computing areas of regions between curves and computing volumes of solids of revolution in Calculus II.
+
+Our typical approach to describe a region $R$ is to describe it as the set of points $(x,y)$ that satisfy inequalities in one of the following ways:
+\[
+    a\le x\le b\quad \text{ and } \quad g(x)\le y\le h(x)\hspace{2in}\mbox{}
+\] 
+\[
+    \text{ or }\hspace{2in}\mbox{}
+\] 
+\[
+    c\le y\le d \quad \text{ and } \quad g(y)\le x\le h(y)\hspace{2in}\mbox{}
+\]
+\pagebreak 
+
+\begin{ex}
+    Draw the region $R$ described by $-1\le x\le 2$ and $x^2\le y\le 5$.
+\end{ex}
+
+\vfill
+
+\begin{ex}
+    Draw the region $R$ described by $0\le y\le 6$ and $-y/2\le x\le y/2$.
+\end{ex} 
+
+\vfill 
+
+\pagebreak 
+
+\begin{ex}\label{ex:region-inequalities}
+    In the $xy$-plane, consider the triangle $T$ that has vertices $(2,0)$, $(6,0)$, and $(6,8)$. Represent this triangle with inequalities in both ways.
+\end{ex}
+
+\vfill
+
+\begin{ex}
+    Using inequalities, describe the region $R$ in the $xy$-plane bounded by the graphs of $y=4x$ and $y=x^2$.  %Do this both ways (using bottom and top functions; and using left and right functions).
+\end{ex}
+
+\vfill
+
+
+
+\pagebreak 
+\begin{ex}
+    Draw the region $R$ in the $xy$-plane bounded by the graphs of $y=2x$, $y=6-x$, and the $y$-axis. Label each curve and intersection points. Then describe it with inequalities.
+\end{ex}
+
+\vfill 
+
+\begin{ex}
+    Draw the region $R$ in the $xy$-plane bounded by the graphs of $y=2x$, $y=6-x$, and $y=1$. Label each curve and intersection points. Then describe it with inequalities.
+\end{ex}
+
+\vfill 
+
+\pagebreak 
+
+\subsection{Integrating over general regions via iterated integrals}
+Once we have described a region $R$ with inequalities, we can compute a double integral of a function $f(x,y)$ over $R$ via iterated integrals. This allows us to compute the (signed) volume of 3D region below the surface $z=f(x,y)$ and above the region $R$.
+\begin{itemize}
+    \item If $R$ is described by $a\le x\le b$ and $g(x)\le y\le h(x)$, then \[\iint\limits_R f(x,y)\dA = \int\limits_{x=a}^{x=b} \left(\,\int\limits_{y=g(x)}^{y=h(x)}f(x,y)\dy\right)\dx.\]
+    More simply, 
+    \[
+        \iint\limits_R f(x,y)\dA = \hspace{2in}
+    \]
+    %\int\limits_a^b\int\limits_{g(x)}^{h(x)}f(x,y)\dy \dx.\]
+    \item If $R$ is described by $c\le y\le d$ and $g(y)\le x\le h(y)$, then 
+    \[
+        \iint\limits_R f(x,y)\dA = \int\limits_{y=c}^{y=d} \left(\,\int\limits_{x=g(y)}^{x=h(y)}f(x,y)\dx\right)\dy.
+    \]
+    More simply, 
+    \[
+        \iint\limits_R f(x,y)\dA = \hspace{2in}
+    \]
+    %\int\limits_c^d\int\limits_{g(y)}^{h(y)}f(x,y)\dx \dy.\]
+\end{itemize}
+We then proceed as we did before with iterated integrals, evaluating the inner integral first, and then evaluating that in the outer integral.
+
+\begin{example}
+    In Exercise~\ref{ex:region-inequalities}, we described the triangle $T$ with the inequalities in two ways.
+    Our first description of $T$ was
+    \begin{center}
+        $2\le x\le 6$ \quad and \quad  $0\le y\le 2x-4$.
+    \end{center}
+    Thus, for any function $f(x,y)$, the double integral of $f$ over $T$ is
+    \[\iint\limits_T f\dA = \phantom{\int\limits_2^6 \int\limits_0^{2x-4} f(x,y)\dy\dx.}\]
+    Our second description of $T$ was
+    \begin{center}
+        $0\le y\le 8$ \quad and \quad $(y+4)/2\le x\le 6$.
+    \end{center}
+    Thus, for any function $f(x,y)$, the double integral of $f$ over $T$ is 
+    \[\iint\limits_T f\dA = \phantom{\int\limits_0^8 \int\limits_{(y+4)/2}^6 f(x,y)\dx\dy.}\]
+    
+    This provides flexibility, as the inner integral may be easier to integrate in terms of one variable than it is in terms of the other.
+\end{example}
+\pagebreak 
+\begin{ex}
+    Evaluate the iterated integral $\displaystyle\int\limits_{-2}^0\int\limits_{0}^{\sqrt{4-x^2}} y\dy \dx$. Also, draw the region $R$ that this double integral is over.
+\end{ex}
+\vfill 
+
+\begin{ex}
+    Evaluate the following double integral (perhaps changing the limits of integration).
+    \[
+        \int\limits_0^2\int\limits_y^2 \ee^{x^2}\dx\dy
+    \]
+\end{ex}
+
+
+\vfill

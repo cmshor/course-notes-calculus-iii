@@ -1,0 +1,130 @@
+\newlecture
+
+\setcounter{section}{5}
+%\def\textbookchapter{Chapter 9: Multivariable and Vector Functions}
+\def\coursetopicnumber{I}
+\def\topic{Vector-Valued Functions} % this is the printed title
+\def\shorttopic{Vector-valued functions} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{9.6} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-9-6-Vector-Valued-Functions.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+
+\section{\topic{} \booklink{}}
+\label{sec:vector-valued-functions}
+\subsection{Domain of a vector-valued functions}
+In Section \ref{sec:lines-and-planes}, we saw the definition of a \emph{vector-valued function}, which is a function of the form 
+\[
+    \vec{r}(t)=\langle x(t),y(t),z(t)\rangle
+\] 
+where $x(t)$, $y(t)$, $z(t)$ are real-valued functions of $t$.
+
+\begin{defn}[Domain of a vector-valued function]
+    The vector-valued function $\vec{r}(t)$ is defined at the values of $t$ for which $x(t)$, $y(t)$, and $z(t)$ are all defined. Thus, the \emph{domain} of $\vec{r}(t)$ is the intersection of the domains of $x(t)$, $y(t)$, and $z(t)$.
+\end{defn}
+
+\begin{ex}
+    Let $\vec{r}(t)=\left\langle \sqrt{t+3},\dfrac{1}{t}\right\rangle$. Determine the domain of $\vec{r}(t)$.
+\end{ex}
+
+\vfill
+
+\subsection{Graph of a vector-valued function}
+\begin{defn}[Graph of a vector-valued function]
+    The \emph{graph} of a vector-valued function $\vec{r}(t)$ is the set of all endpoints of output vectors of $\vec{r}(t)$ viewed as position vectors.
+\end{defn}
+When graphing, we put arrows on the graphed path to indicate direction of motion. In Section 9.5, we worked with vector-valued functions whose graphs are lines. In this section, we'll focus on other types of graphs.
+
+\begin{ex}
+    Let $\vec{r}(t)=\langle \cos(t),\sin(t)\rangle$. Sketch the graph of $\vec{r}(t)$ for $t$ in each of the following intervals.
+    \begin{multicols}{2}
+    \begin{enumerate}
+        \item $[0,2\pi]$.
+        \item $[\pi/2,3\pi/2]$.
+    \end{enumerate}
+    \end{multicols}
+\end{ex}
+
+\vfill
+
+\pagebreak 
+
+\begin{ex}
+    Sketch the graph of $\vec{r}(t)=\langle 3+\cos(t),4+\sin(t)\rangle$ for $t$ in $[0,2\pi]$.
+\end{ex}
+
+\vfill
+
+\begin{ex}
+    Sketch the graph of $\vec{r}(t)=\langle 3\cos(t),4\sin(t)\rangle$ for $t$ in $[0,2\pi]$. Name this curve.
+\end{ex}
+
+\vfill
+
+\begin{ex}
+    Sketch the curve $\vec{r}(t)=\langle \cos(t),\sin(t),t\rangle$ for $0\le t\le 4\pi$. Name this curve.
+\end{ex}
+
+\vfill
+
+\pagebreak 
+
+\begin{ex}
+    Sketch the curve $\vec{r}(t)=\langle 2\sin(t),3,2\cos(t)\rangle$ for $t$ in $[0,\pi]$.
+\end{ex}
+
+\vfill
+
+\begin{ex}
+    Write down a vector-valued function whose graph is the top half of a circle of radius 3 centered at $(4,5)$ traveling counterclockwise.
+\end{ex}
+
+\vfill 
+
+\subsection{Shifting direction and time}
+\begin{prop}[Changing the direction of motion]
+    If the parametrization $\vec{r}(t)$, for $t$ in $[a,b]$, traces out a curve, then the same curve is traced out in the opposite direction by the vector-valued function $\vec{r}(-t)$, for $t$ in $[-b,-a]$.
+\end{prop}
+
+\begin{ex}
+    Write down a vector-valued function whose graph is the top half of a circle of radius 3 centered at $(4,5)$ traveling clockwise.
+\end{ex}
+
+\vfill
+
+\begin{ex}
+    Parametrize one revolution along the unit circle starting at $(1,0)$, moving clockwise.
+\end{ex}
+
+\vfill
+
+\pagebreak
+
+\begin{ex}
+    Parametrize one revolution along the unit circle counter-clockwise, but make it so that it is at the point $(0,1)$ when $t=0$.
+\end{ex}
+
+\vfill
+
+We have mostly focused on circular motion here. We can parametrize other types of motion.
+
+\begin{ex}
+    Say you have a function $f(x)$. Describe the function $\vec{r}(t)=\langle t, f(t)\rangle$ for $t$ in $[a,b]$.
+\end{ex}
+
+\vfill
+
+\begin{ex}
+    Write down a parametrization for the path that travels along the parabola $y=x^2$ from the point $(-1,1)$ to the point $(4,16)$.
+\end{ex}
+
+\vfill 
+
+

@@ -1,0 +1,88 @@
+\newlecture
+
+\setcounter{section}{7}
+%\def\textbookchapter{Chapter 9: Multivariable and Vector Functions}
+\def\coursetopicnumber{I}
+\def\topic{Arc Length} % this is the printed title
+\def\shorttopic{Arc length} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{9.8} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-9-8-Arc-Length-Curvature.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+
+\section{\topic{} \booklink{}}
+\label{sec:arc-length}
+\subsection{Arc length}
+Let $\vec{r}(t)$ be a vector-valued function. If we plot $\vec{r}(t)$ from some time $t=a$ to some other time $t=b$, we get a curve. How long is this curve? The answer is the \emph{arc length} of $\vec{r}(t)$ from $t=a$ to $t=b$.
+
+Recall that if $\vec{r}(t)$ represents the position of an object, then $|\vec{r}\,'(t)|$ represents its speed. From Calculus I/II, we know the following:
+\begin{itemize}
+    \item the definite integral of a velocity function gives net displacement (end position minus start position); and
+    \item the definite integral of a speed function gives total distance traveled (think car odometer).
+\end{itemize}
+
+Thus, we can compute the arc length of a vector-valued function $\vec{r}(t)$ from $t=a$ to $t=b$ by imagining that we are traveling along the path and then computing the total distance traveled.
+
+\begin{framed}
+    \begin{thm}[Arc length]\label{thm:arc-length}
+        For the vector-valued function $\vec{r}(t)$ with $a\le t\le b$, the arc length of the graph of $\vec{r}(t)$ is
+        \[\phantom{\int\limits_a^b|\vec{r}\,'(t)\dt.}\]
+    \end{thm}
+\end{framed}
+If $\vec{r}(t)=\langle x(t),y(t),z(t)\rangle$ for $a\le t\le b$, then we can write its arc length as
+\[
+    \phantom{\int\limits_a^b\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\dt.}
+\]
+
+\begin{ex}
+    For $\vec{r}(t)=\langle 2\cos(t),2\sin(t),t\rangle$, compute the arc length of the curve for $0\le t\le 2\pi$. What curve is this?
+\end{ex}
+
+\vfill
+
+\pagebreak 
+
+For most functions $\vec{r}(t)$, $|\vec{r}\,'(t)|$ is a difficult function to integrate because of the square root. Typically, people use some sort of numerical integration method to compute the arc length with very little error. (You saw some methods in Calculus II, such as right-endpoint sums, midpoint sums, Simpson's Rule, etc.)
+\begin{ex}
+    Set up an integral to compute the arc length of the graph of $\vec{r}(t)=\left\langle 2t,\ee^t, \sqrt{t}\right\rangle$ for $1\le t\le 2$.
+\end{ex}
+
+\vfill
+
+We can approximate the above arc length with something like the following command at \href{https://www.wolframalpha.com}{Wolfram Alpha}:
+\begin{center}
+    %\href{https://www.wolframalpha.com/input/?i=integral+from+t%3D1+to+t%3D2+of+sqrt%5B4%2Be%5E%282t%29%2B1%2F%284t%29%5D+dt}
+    \href{https://www.wolframalpha.com/input/?i=integral+from+t%3D1+to+t%3D2+of+sqrt%5B4+%2B+e%5E%282t%29+%2B+1%2F%284t%29%5D+dt}
+    {\tt{integral from t=1 to t=2 of sqrt[4+e\string^(2t)+1/(4t)] dt}}
+\end{center}
+which returns a value of $\approx 5.1274$.
+
+Sometimes, however, $|\vec{r}\,'(t)|$ cleans up nicely as a function that we can integrate, either with a perfect square under the square root or as an expression easily handled with $u$-substitution. Here's an example.
+
+\begin{ex}
+    Find the arc length of $\vec{r}(t)=\left\langle 3t,\dfrac{t^3}{3},\dfrac{\sqrt{6}t^2}{2}\right\rangle$ for $0\le t\le 3$.
+\end{ex}
+
+\vfill
+
+\pagebreak 
+
+\subsection{A connection to Calculus II}
+In Calculus II (Math 134), you saw a formula for the arc length of the graph of $y=f(x)$ for $a\le x\le b$:
+\[
+    \phantom{\text{arc length } = \int\limits_a^b\sqrt{1+(f'(x))^2}\dx.}
+\]
+
+\vspace{1in}
+
+\begin{ex}
+    Use Theorem~\ref{thm:arc-length} to show that the above formula works.
+\end{ex}
+
+\vfill

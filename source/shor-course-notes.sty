@@ -1,0 +1,78 @@
+\usepackage[margin=.8in]{geometry}
+\usepackage[normalem]{ulem}
+\usepackage{fancyhdr}
+\usepackage{tablefootnote,tabularx}
+\pagestyle{fancy}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks,urlcolor=blue]{hyperref}
+\usepackage{multicol,graphicx,array,wrapfig}
+\usepackage{esint,empheq,enumitem,tikz}
+\usepackage{framed}
+
+\newcommand{\firstlecture}{
+	\setcounter{page}{1}
+	\setcounter{section}{0}
+	\setcounter{prop}{0}
+	\setcounter{thm}{0}
+	\setcounter{lem}{0}
+	\setcounter{example}{0}
+	\setcounter{defn}{0}
+	\setcounter{cor}{0}
+	\setcounter{ex}{0}
+}
+% \firstlecture is for the first section of material since the compiler doesn't like a \pagebreak after the intro.
+
+
+\newcommand{\newquiz}{
+    \pagebreak 
+    \renewcommand{\theenumi}{\arabic{enumi}}
+	\setcounter{page}{1}
+	\setcounter{section}{0}
+	\setcounter{prop}{0}
+	\setcounter{thm}{0}
+	\setcounter{lem}{0}
+	\setcounter{example}{0}
+	\setcounter{defn}{0}
+	\setcounter{cor}{0}
+	\setcounter{ex}{0}
+}
+\newcommand{\newlecture}{
+    \pagebreak 
+    %\renewcommand{\theenumi}{\alph{enumi}}
+	%\setcounter{page}{1}
+	\setcounter{section}{0}
+	\setcounter{prop}{0}
+	\setcounter{thm}{0}
+	\setcounter{lem}{0}
+	\setcounter{example}{0}
+	\setcounter{defn}{0}
+	\setcounter{cor}{0}
+	\setcounter{ex}{0}
+}
+
+
+
+%%%% Header / display stuff
+\def\nada{}
+\lhead{\coursenumber\ -- \textit{\coursetitle} -- \instructorshort\ -- \termsemestershort\ \termyear}
+\rhead{CT.\coursetopicnumber, S.\textbooksection: \shorttopic}
+
+\newcommand{\topstuffnodate}{
+\noindent \github\ -- \coursenumber\ -- \textit{\coursetitle} \hfill \school \\ 
+\instructor \hfill \termsemester\ \termyear \hfill \cctag
+\begin{center} \Large {\sc{\textbookchapter}} \\ {\sc{\textbooksection: \topic}}\\ \normalsize
+    \href{Section \textbooksectionurl}{\emph{Link to textbook section}}
+    \end{center}
+}
+
+\newcommand{\topstuff}{
+\noindent \github\ -- \coursenumber\ -- \textit{\coursetitle}  \hfill \school \\ 
+\instructor \hfill \termsemester\ \termyear \\
+Date: \hfill \cctag
+\begin{center} 
+\noindent \Large {\sc{\textbookchapter}} \normalsize
+\end{center}
+}
+
+\def\booklink{\href{\textbooksectionurl}{(book link)}}
+

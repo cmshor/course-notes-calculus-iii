@@ -1,0 +1,172 @@
+%\newlecture
+
+%\begin{titlepage}
+\title{{\sc Course notes \\ Math 235 -- Calculus III}}
+\date{\termsemester{} \termyear{} \\ (work in progress)}
+\author{Caleb M.\ Shor, Ph.D. \\ Professor, Department of Mathematics \\ Western New England University \\ \href{mailto:cshor@wne.edu}{cshor@wne.edu}}
+\vspace{-1in}
+\maketitle
+%\tableofcontents
+\pagenumbering{roman}
+\pagestyle{plain}
+
+\vspace{-.5in}
+\section*{Preface}
+\subsection*{Description}
+These course notes have been created by Prof.\ Caleb Shor for use with Math 235, \emph{Calculus III}, taught at Western New England University. The notes follow material from the following textbook.
+\begin{itemize}
+    \item \emph{Active Calculus -- Multivariable + Vector}, by Steve Schlicker, Mitchel T. Keller, \& Nicholas Long.
+    This textbook is available -- for free! -- in multiple formats from \\
+    \mbox{}\hfill\url{https://activecalculus.org/ACM.html}.\hfill\mbox{}
+\end{itemize}
+
+Should you want additional perspectives, examples, etc., related to the course material, the following resources are freely available and worth referring to.
+\begin{itemize}
+    \item \emph{Calculus Volume 3 (OpenStax)}, by Gilbert Strang, Edwin Herman, and others.
+    This textbook is available -- for free! -- in multiple formats from \\ 
+    \mbox{}\hfill\url{https://openstax.org/details/books/calculus-volume-3}.\hfill\mbox{}
+    \item \emph{Paul's Notes}, by Paul Dawkins. 
+    This set of online notes is available -- for free! -- from \\ \mbox{}\hfill  \url{https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx}.\hfill\mbox{}
+    \item \emph{Multivariable Calculus}, at Khan Academy. This is a video series of short lessons and practice exercises, available -- for free! -- from
+    \\ \mbox{}\hfill\url{https://www.khanacademy.org/math/multivariable-calculus}.\hfill\mbox{}
+\end{itemize}
+
+\subsection*{Features}
+This PDF was created using \LaTeX. It contains two kinds of hyperlinks. The majority of the hyperlinks in this document are in blue. These are external links (primarily to webpages) which require internet access. A few of the hyperlinks in this document are in red, which are links to other locations (such as footnotes) within this document.
+
+\subsection*{Latest version}
+Visit \url{https://github.com/cmshor/course-notes-calculus-iii} for the latest version of these notes.
+
+\subsection*{Sharing (License)}
+These notes are released with a \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative Commons BY-NC-SA license}\footnote{See \url{https://creativecommons.org/licenses/by-nc-sa/4.0/} for more information.}: \cctag. 
+
+Basically, you are welcome to share/adapt these notes as you wish. ``BY'' means you need to give me credit, link to the license, and indicate if changes were made. ``NC'' means you can't use this material for commercial purposes. And ``SA'' means that any adapted material must be shared under the same license. Full details are on the Creative Commons website.
+
+\vfill\mbox{}
+\pagebreak 
+
+\subsection*{Acknowledgments}
+%Some of the images in these notes have been created by the author using  
+This document contains images from a few sources. Some images are clip art courtesy of Florida Center for Instructional Technology (\href{https://etc.usf.edu/clipart/}{FCIT}). One image is from our textbook, \href{https://activecalculus.org/vector/frontmatter.html}{\textit{Active Calculus - Multivariable + Vector}}. Two images are from Wikimedia Commons. All other images were created by the author using SageMath\footnote{SageMath: Open-Source Mathematical Software, available from \url{https://www.sagemath.org}.} or PGF/TikZ\footnote{PGF is a package for TeX for generating graphics, with a syntax layer called TikZ. Information is at \mbox{\url{https://github.com/pgf-tikz/pgf}}.}.
+
+\medskip 
+
+\begin{tabular}{c|l}
+Page \# & Source (clickable if blue)\\ \hline
+\pageref{img:multivar-fn-graph} & PGF/TikZ \\ \hline
+\pageref{img:right-hand-axes} & \href{https://commons.wikimedia.org/wiki/File:Right_hand_rule_Cartesian_axes-permuted.svg}{Wikimedia Commons}  \\ \hline
+\pageref{img:wikimedia-rhr-cross-product} & \href{https://commons.wikimedia.org/wiki/File:Right_hand_rule_cross_product_large_print.svg}{Wikimedia Commons} \\ \hline
+\pageref{img:next-3d-graph} & PGF/TikZ \\ \hline
+\pageref{img:3d-graph-traces} & PGF/TikZ \\ \hline
+\pageref{img:next-3d-graph} & PGF/TikZ \\ \hline
+\pageref{img:3d-graph-traces} & PGF/TikZ \\ \hline
+\pageref{img:fcit-page-1} & FCIT \\ \hline
+\pageref{img:fcit-page-2} & FCIT \\ \hline
+\pageref{img:tikz-paraboloid} & PGF/TikZ \\ \hline
+\pageref{img:tikz-cone} & PGF/TikZ \\ \hline
+\pageref{img:tikz-saddle} & PGF/TikZ \\ \hline
+\pageref{img:tikz-bad-limit} & PGF/TikZ \\ \hline
+\pageref{img:sage-level-curves} & SageMath \\ \hline
+\pageref{img:sage-saddle} & SageMath \\ \hline
+\pageref{img:sage-level-curves-again} & SageMath \\ \hline
+\pageref{img:tikz-paraboloid-again} & PGF/TikZ \\ \hline 
+\pageref{img:fcit-contour-diagram} & FCIT \\ \hline
+\pageref{img:sage-parabolas-gradient} & SageMath \\ \hline
+\pageref{img:sage-double-int-1} & SageMath \\ \hline
+\pageref{img:sage-double-int-2} & SageMath \\ \hline
+\pageref{img:sage-double-int-3} & SageMath \\ \hline
+\pageref{img:sage-vector-field-1} & SageMath \\ \hline 
+\pageref{img:sage-vector-field-2} & SageMath \\ \hline 
+\pageref{img:textbook-vector-field} & \href{https://activecalculus.org/vector/S_Vector_IdeaLineIntegral.html#SS_Vector_IdeaLineIntegral_LineIntegrals}{\textit{Active Calculus - Multivariable + Vector}} \\ \hline 
+\pageref{img:sage-vector-field-3} & SageMath \\ \hline 
+\pageref{img:sage-vector-field-4} & SageMath \\ \hline 
+\pageref{img:sage-vector-field-5} & SageMath \\ \hline 
+\end{tabular} 
+%\end{titlepage}
+
+\vfill\mbox{}
+\pagebreak 
+
+\iffalse
+\subsection*{Prerequisite skills}
+The prerequisite for this course is Math 134 (Calculus II) or Math 124 (Calculus II For Management, Life, and Social Sciences). Each of those courses has Calculus I as a prerequisite. Thus, it is expected that you are comfortable with material from those courses and that you can do the following:
+\begin{itemize}
+    \item Compute the derivative of a function using various rules of differentiation.
+    \item 
+\end{itemize}
+\fi
+
+\subsection*{Course Contents}
+This course covers four main topics: vectors and vector-valued functions; multivariable differentiation; multivariable integration; and vector calculus.
+
+Listed below is a description of the textbook sections we will cover within each topic.
+%, along with the corresponding textbook location.
+%(``ACM'' = \emph{Active Calculus: Multivariable}, by Schlicker. ``OSC3'' = \emph{Calculus Volume 3}, by OpenStax.)
+%\newcommand{\part}[1]{\item[\textbf{AC Chapter}] \textbf{#1}}
+%\newcommand{\OSchap}[1]{\item[\textbf{OS Chapter}] \textbf{#1}}
+\begin{multicols}{2}
+\begin{enumerate}[label=\Roman*.]
+    \item \textbf{Vectors and Vector-Valued Functions}
+    \begin{enumerate}[label=\theenumi.\arabic*]
+        \item[9.1] Multivariable Functions and Three Dimensional Space (9.1.1-9.1.3)
+        \item[9.2] Vectors
+        \item[9.3] The Dot Product
+        \item[9.4] The Cross Product
+%        \item Applications
+        \item[9.5] Lines and Planes in Space
+        \item[9.6] Vector-Valued Functions
+        \item[9.7] Derivatives and Integrals of Vector-Valued Functions
+        \item[9.8] Arc Length (9.8.1)
+    \end{enumerate}
+    \item\textbf{Multivariable Differentiation}
+    \begin{enumerate}[label=\theenumi.\arabic*]
+        \item[9.1] Multivariable Functions and Three Dimensional Space (9.1.4-9.1.6)
+        \item[10.1] Limits
+        \item[10.2] First-Order Partial Derivatives
+        \item[10.3] Second-Order Partial Derivatives
+        \item[10.4] Linearization: Tangent Planes and Differentials
+        \item[10.5] The Chain Rule
+        \item[10.6] Directional Derivatives and the Gradient
+        \item[10.7] Optimization
+        \item[10.8] Constrained Optimization: Lagrange Multipliers (*)
+    \end{enumerate}
+    \item\textbf{Multivariable Integration}
+    \begin{enumerate}[label=\theenumi.\arabic*]
+        \item[11.1] Double Riemann Sums and Double Integrals over Rectangles
+        \item[11.2] Iterated Integrals
+        \item[11.3] Double Integrals over General Regions
+        \item[11.5] Double Integrals in Polar Coordinates
+        \item[11.4] Applications of Double Integrals
+        %\item Surfaces Defined Parametrically and Surface Area (ACM 11.6)
+        \item[11.7] Triple Integrals
+        \item[11.8] Triple Integrals in Cylindrical and Spherical Coordinates
+        \item[11.9] Change of Variables (*)
+    \end{enumerate}
+    \item\textbf{Vector Calculus}
+    \begin{enumerate}[label=\theenumi.\arabic*]
+        \item[12.1] Vector Fields
+        \item[12.2] The Idea of a Line Integral
+        \item[12.3] Using Parametrizations to Calculate Line Integrals
+        \item[12.4] Path-Independent Vector Fields and the Fundamental Theorem of Calculus for Line Integrals
+        \item[12.5] The Divergence of a Vector Field (*)
+        \item[12.6] The Curl of a Vector Field (*)
+        \item[12.7] Green's Theorem
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+\bigskip
+
+\textit{Due to time constraints, we may not cover all of the above sections during the semester. Sections which may be omitted are indicated with an asterisk (*).}
+
+\bigskip
+
+A table of contents for the course notes appears on the next few pages, followed by the course notes themselves.
+
+\renewcommand{\contentsname}{Course Notes: Table of Contents}
+%\newpage
+%\end{titlepage} 
+\pagebreak 
+%\setcounter{page}{1}
+
+

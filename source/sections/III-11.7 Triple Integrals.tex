@@ -1,0 +1,162 @@
+\newlecture
+\setcounter{chapter}{11}
+\setcounter{section}{6}
+
+%\def\textbookchapter{Chapter 11: Multiple Integrals}
+\def\coursetopicnumber{III}
+\def\topic{Triple Integrals} % this is the printed title
+\def\shorttopic{Triple integrals} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{11.7} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-11-7-Triple-Integrals.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+\section{\topic{} \booklink{}}
+\label{sec:triple-integrals}
+\subsection{Single, double, triple}
+\begin{itemize}
+    \item For $f$ a function of one variable and $I$ an interval in the number line, a \emph{single integral} is an integral of the form 
+    \[
+        \phantom{\int\limits_I f\dx.}
+    \]
+    $\dx$ is a differential that represents an infinitesimally small unit of length.
+    %\vfill 
+
+    \item For $f$ a function of two variables and $R$ a region in the $xy$-plane, a \emph{double integral} is an integral of the form 
+    \[
+        \phantom{\iint\limits_R f\dA.}
+    \]
+    $\dA$ is a differential that represents an infinitesimally small unit of area.
+    %\vfill\vfill
+    
+    \item For $f$ a function of three variables and $D$ a region in 3-dimensional space, a \emph{triple integral} is an integral of the form 
+    \[
+        \phantom{\iiint\limits_D f\dV.}
+    \]
+    $\dV$ is a differential that represents an infinitesimally small unit of volume.
+    %\vfill\vfill
+\end{itemize}
+
+In Section \ref{sec:double-integral-apps}, we saw some double integral applications. They also apply to triple integrals.
+
+\begin{itemize}
+    \item 
+    If $f$ is a function of 3 variables and $D$ is a region in 3-space, then the (signed) volume (?!) of the 4D region below (?!) the graph of $w=f(x,y,z)$ above the region $D$ is
+    %\vfill %
+    \[
+        \phantom{\iiint\limits_D f\dV.}
+    \]
+    
+    \item If an object fills a region $D$ in 3-space, and the density of the object at the point $(x,y,z)$ is $\delta(x,y,z)$ (units of mass per unit of volume), then the total mass of the object is %\vfill
+    \[
+        \phantom{\iiint\limits_D \delta \dV.}
+    \]
+    
+    \item If $D$ is a region in 3-space, then its volume is 
+    %\vfill %
+    $\phantom{\displaystyle\iiint \limits_D \dV.}$
+    
+    \item If $D$ is a region in 3-space, then the average value of a function $f$ on $D$ is 
+    %\vfill %
+    $\phantom{\displaystyle\dfrac{1}{\text{vol}(D)}\iiint\limits_D f\dV.}$
+\end{itemize}
+
+\pagebreak 
+
+
+
+\pagebreak 
+
+\subsection{Triple integral, general 3D region, Cartesian coordinates}
+Let $D$ be a region in 3-dimensions, and suppose we can describe $D$ by 
+\[ 
+    a\le x\le b, \quad\quad
+    g(x)\le y\le h(x), \quad\quad
+    p(x,y) \le z \le q(x,y) 
+\]
+for constants $a, b$, and functions $g(x)$, $h(x)$, $p(x,y)$, $q(x,y)$.
+
+Then for any function $f$ of $x$, $y$, $z$, we have $\dV=\dz\dy\dx$, so 
+\[
+    \iiint\limits_D f\dV = 
+    \phantom{\int\limits_a^b \int\limits_{g(x)}^{h(x)} \int\limits_{p(x,y)}^{q(x,y)} f(x,y,z)\dz\dy\dx.}
+\]
+
+If, instead, we had inequalities with a different order of variables, such as
+\[ 
+    c\le y\le d, \quad\quad
+    g(y)\le z\le h(y), \quad\quad
+    p(y,z) \le x \le q(y,z), 
+\]
+then we would have 
+\[
+    \iiint\limits_D f\dV = 
+    \phantom{\int\limits_c^d \int\limits_{g(y)}^{h(y)} \int\limits_{p(y,z)}^{q(y,z)} f(x,y,z)\dx\dz\dy.}
+\]
+Of course, there are other possibilities for the inequalities. The differentials must match up with the integral symbols. (Inner, Middle, Outer.) 
+\begin{itemize} 
+    \item In general, the bounds for Inner can involve variables from %Middle and/or Outer. 
+    \\ 
+    \item The bounds for Middle can involve the variable from %Outer. 
+    \\ 
+    \item The bounds for Outer are %constants.
+    \\
+\end{itemize} 
+
+\noindent 
+There are generally two main stages in computing a triple integral:
+\begin{enumerate}
+    \item \mbox{} \\ 
+    \item \mbox{} \\ 
+\end{enumerate}
+
+\subsection{Describing 3D regions}
+It can be difficult to describe a 3D region! However, we have some tricks. The main idea is to determine bounds for one of the variables (say $z$) in terms of the others (say $x$ and $y$). Then we can project the 3D region into a region in the $xy$-plane. Then we need to describe the region in the $xy$-plane, which we can using either rectangular coordinates (Section \ref{sec:double-integral-rectangle}) or polar coordinates (Section \ref{sec:double-int-polar}).
+
+\pagebreak 
+
+\subsection{Examples}
+\begin{ex}
+    Set up and evaluate $\displaystyle\iiint\limits_D 6x\dV$ for $D$ the region given by
+    \[0\le y\le 1,\quad y\le z\le x,\quad y\le x\le 2y.\]
+\end{ex}
+\vfill 
+
+\begin{ex}
+    Let $W$ be the top half of the unit ball centered at the origin. Describe $W$ with inequalities for $x$, $y$, and $z$. (A \emph{ball} is a filled-in sphere, just as a \emph{disc} is a filled-in circle.) Then, for any function $f$, write down $\iiint\limits_W f\dV$ as an iterated integral.
+\end{ex}
+
+\vfill\vspace{1in}
+
+\pagebreak 
+\begin{ex}
+    How would you determine the average height ($z$-value) of a point in the top half of a ball of radius 3?
+\end{ex}
+
+\vspace{1.5in}
+
+\begin{ex}
+    A building $B$ has a rectangular base that is 8m wide and 16m long. It has a flat roof that is slanted so that one corner is 12m high and its adjacent corners are 10m high.
+    \begin{enumerate}
+        \item Describe the building with inequalities for $x$, $y$, $z$.
+        \item Set up an iterated integral to compute the building volume.% (which is $\displaystyle\iiint\limits_B \dV$).
+        \item Suppose the building is filled with a gas that has density $\delta(x,y,z)=(xy+z)$ kg/m$^3$. Set up an iterated integral to compute the total mass of the gas in the building.
+    \end{enumerate}
+\end{ex}
+
+\vfill
+
+%\pagebreak 
+
+\pagebreak 
+
+\begin{ex}
+    Consider the region $D$ in the first octant under the plane $x+2y+3z=6$. For some function $f(x,y,z)$, write $\displaystyle\iiint\limits_D f\,\dV$ as an iterated integral with differentials in order $\dy \dx \dz$. %Then write it as an iteraged integral with differentials in order $\dy \dx \dz$.
+\end{ex}
+\vfill
+

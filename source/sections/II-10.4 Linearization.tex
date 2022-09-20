@@ -1,0 +1,183 @@
+\newlecture
+\setcounter{section}{3}
+
+%\def\textbookchapter{Chapter 10: Derivatives of Multivariable Functions}
+\def\coursetopicnumber{II}
+\def\topic{Linearization: Tangent Planes and Differentials} % this is the printed title
+\def\shorttopic{Linearization: tangent planes} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{10.4} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-10-4-Linearization.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+\section{\topic{} \booklink{}}
+\label{sec:linearization}
+\subsection{Single variable}
+\subsubsection{Tangent lines}
+Given a differentiable function $f(x)$, the equation of the line tangent to the curve $y=f(x)$ at $x=a$ is 
+\bigskip 
+
+\noindent $y=T(x)$, for  $T(x)=\phantom{f(a)+f'(a)\cdot (x-a).}$
+\vfill
+
+\noindent Reasoning: $T(x)$ is the unique degree-one polynomial such that $T(a)=f(a)$ and $T'(a)=f'(a)$.
+\begin{ex}
+    Let $f(x)=\sqrt{x}$. Find the equation of the tangent line $y=T(x)$ to the graph of $y=f(x)$ at $x=4$. 
+\end{ex}
+
+\vfill
+
+\subsubsection{Linearization}
+In particular, $T(x)\approx f(x)$ for $x$-values near $a$. No matter how complicated $f(x)$ is, note that $T(x)$ is a degree-one polynomial in $x$. Therefore, we can use $T(x)$ to approximate $f(x)$ for $x$-values near $a$. For this reason, we also call $T(x)$ a \emph{linearization} (or \emph{linear approximation}) of $f(x)$ at $x=a$.
+
+\begin{ex}
+    Continuing the previous exercise, use $T(x)$ to approximate $\sqrt{4.1}$. Based on the graph, is this approximation too big or too small?
+\end{ex}
+
+\vfill
+
+\pagebreak 
+
+\subsection{Multiple variables}
+\subsubsection{Tangent planes}
+Given a differentiable function $f(x,y)$ with continuous first order partial derivatives, the equation of the plane tangent to the surface $z=f(x,y)$ at $(x,y)=(a,b)$ is 
+\bigskip 
+
+\noindent $z=T(x,y)$, for  $T(x,y)=\phantom{f(a,b)+f_x(a,b)\cdot (x-a)+f_y(a,b)\cdot (y-b).}$
+\vfill
+
+\noindent Reasoning: $T(x,y)$ is the unique degree-one polynomial in $x$ and $y$ such that $T(a,b)=f(a,b)$, $T_x(a,b)=f_x(a,b)$, and $T_y(a,b)=f_y(a,b)$.
+\begin{ex}
+    Let $f(x,y)=\dfrac{5}{x^2+y^2}$. Find the equation of the tangent plane $z=T(x,y)$ to the graph of $z=f(x,y)$ at $(x,y)=(-1,2)$. Also find a normal vector for this plane.
+\end{ex}
+
+\vspace{2.5in}
+
+\subsubsection{Linearization}
+In particular, $T(x,y)\approx f(x,y)$ for points near $(a,b)$. No matter how complicated $f(x,y)$ is, note that $T(x,y)$ is a degree-one polynomial in $x$ and $y$. Therefore, we can use $T(x,y)$ to approximate $f(x,y)$ for points near $(a,b)$. For this reason, we also call $T(x,y)$ a \emph{linearization} (or \emph{linear approximation}) of $f(x,y)$ at $(x,y)=(a,b)$.
+\begin{ex}
+    Continuing the previous exercise, use $T(x,y)$ to approximate $f(-1.05,2.1)$.
+\end{ex}
+
+\vfill 
+
+\pagebreak
+
+\subsection{Differentials and change}
+\subsubsection{Single variable (Calculus II)}
+\begin{ex}
+    Evaluate $\displaystyle\int x\sin(x^2)\dx$.
+\end{ex}
+
+\vspace{1.2in}
+
+Quantities like $\dif x$ and $\dif u$ are called \emph{differentials}. We think of them as infinitesimally small versions of $\Delta x$ and $\Delta u$.
+\medskip 
+
+Differentials help us understand how a small change in the independent variable will affect the dependent variable. In general, if $y=f(x)$, then $\dy=f'(x)\dx$. Thus $\Delta y\approx f'(x)\Delta x$.
+\medskip
+
+This relationship actually follows from our linear approximation work. For some $x$-value $a$, we have $y\approx f(a)+f'(a)\cdot(x-a)$, so $y-f(a) \approx f'(a)\cdot(x-a)$.
+
+\vspace{.5in}
+
+\begin{ex}
+    Suppose $y=\ln(x)$. Compute $\dy$. Estimate how much $y$ changes when we increase $x$ from $4$ to $4.1$.
+\end{ex}
+
+\pagebreak 
+
+\subsubsection{Multivariable (Calculus III)}
+Now suppose $z=f(x,y)$. We have two independent variables $x$ and $y$. We can solve for the differential $\dif z$ in terms of $\dx$ and $\dy$ using the linear approximation:
+\[
+    f(x,y)\approx f(a,b)+f_x(a,b)\cdot(x-a)+f_y(a,b)\cdot(y-b),
+\] 
+so
+\[
+    f(x,y)-f(a,b)\approx f_x(a,b)\cdot(x-a)+f_y(a,b)\cdot(y-b).
+\]
+\bigskip 
+
+\begin{defn}[The differential of a function at a point]
+Let $f$ be differentiable at the point $(a,b)$. The change in $z=f(x,y)$ as the independent variables change from $(a,b)$ to $(a+\Delta x, b+\Delta y)$ is denoted $\Delta z$ and is approximated by the \emph{differential} $\dif z$ at $(a,b)$:
+\[
+    \Delta z\approx \dif z \phantom{= f_x(a,b)\dx + f_y(a,b)\dy.}
+\]
+\vspace{.6in}
+\end{defn}
+
+\begin{ex}
+Let $z=f(x,y)=\dfrac{5}{x^2+y^2}$. Compute $\dz$ at $(x,y)=(-1,2)$. Approximate the change in $z$ when $(x,y)$ changes from $(-1,2)$ to $(-0.93, 1.94)$.
+\end{ex}
+
+\vfill \vfill\vfill
+
+\noindent Note: If $z=f(x,y)$, we can write $\dif z$ and $\dif f$ interchangeably. They mean the same thing.
+\begin{defn}[The differential of a function]
+    Given a function $f(x,y)$, the differential $\dif f$ is given by 
+    \[
+        \dif f = \phantom{f_x(x,y)\dx + f_y(x,y)\dy}
+    \]
+\end{defn}
+
+\medskip 
+
+\begin{ex}
+    Find a function $f(x,y)$ for which $\dif f=(2x+3y)\dx+3x\dy$.
+\end{ex}
+
+\vfill
+
+\pagebreak 
+
+\subsection{Linearization, quadratic approximation, and beyond}
+\subsubsection{Single-variable}
+In Calculus II, you learned about the $n$th degree Taylor polynomial of a function $f(x)$ at $x=a$, which is given by
+\[
+    T_n(x)=f(a)+\dfrac{f'(a)}{1!}(x-a)+\dfrac{f''(a)}{2!}(x-a)^2+\dfrac{f'''(a)}{3!}(x-a)^3+\dots+\dfrac{f^{(n)}(a)}{n!}(x-a)^n.
+\]
+To write this, we assume that the first $n$ derivatives of $f(x)$ exist.
+
+This formula comes from the desire to create a degree-$n$ polynomial $T_n(x)$ for which 
+\[
+    T_n(a)=f(a),\, T_n'(a)=f'(a),\, T_n''(a)=f''(a),\, \dots,\, T_n^{(n)}(a)=f^{(n)}(a).
+\]
+Geometrically, $T_n(x)$ resembles $f(x)$ for $x$-values near $x=a$. When $n=1$, we have a linear (tangent line) approximation, as seen earlier in this section. When $n=2$, we have a \emph{quadratic approximation}:
+\[
+    Q(x)=f(a)+f'(a)(x-a)+\dfrac{f''(a)}{2}(x-a)^2.
+\]
+
+\begin{ex}
+    Find the quadratic approximation for $f(x)=\cos(x)$ at $x=0$.
+\end{ex}
+
+\vfill
+
+As $n$ grows, the resemblance between $T_n(x)$ and $f(x)$ gets stronger! As $n$ goes to infinity, we get a Taylor series. For many functions, the function's Taylor series is equal to the function for some interval of $x$-values.
+
+\subsubsection{Multivariable}
+As you may expect, all of this translates to the multivariable case. There are Taylor polynomials (and Taylor series) for functions of more than one variable. Rather than writing the general form, we will focus on the \emph{quadratic approximation} $Q(x,y)$ of a function $f(x,y)$ at a point $(a,b)$:
+\begin{align*}
+    Q(x,y)
+    &=f(a,b)+f_x(a,b)\cdot(x-a)+f_y(a,b)\cdot(y-b)\\
+    &+\dfrac{f_{xx}(a,b)}{2}\cdot(x-a)^2+\dfrac{f_{xy}(a,b)}{2}\cdot(x-a)\cdot(y-b)+\dfrac{f_{yx}(a,b)}{2}\cdot(x-a)\cdot(y-b)+\dfrac{f_{yy}(a,b)}{2}\cdot(y-b)^2.
+\end{align*}
+To write this, we assume that the first- and second-order partials of $f$ exist. If the second-order partials are continuous, Clairaut's Theorem says $f_{xy}(a,b)=f_{yx}(a,b)$ and thus
+\begin{align*}
+    Q(x,y)
+    &=f(a,b)+f_x(a,b)\cdot(x-a)+f_y(a,b)\cdot(y-b)\\
+    &+\dfrac{f_{xx}(a,b)}{2}\cdot(x-a)^2+f_{xy}(a,b)\cdot(x-a)\cdot(y-b)+\dfrac{f_{yy}(a,b)}{2}\cdot(y-b)^2.
+\end{align*}
+
+\pagebreak 
+
+\begin{ex}\label{ex:first-quadratic-approx}
+    For $f(x,y)=xy(x-2)(y+6)$ compute the quadratic approximation $Q(x,y)$ of $f(x,y)$ at $(x,y)=(1,-3)$. 
+    % This examples connects with an optimization example in 10.7. (1,-3) is a critical point of this function that is, in fact, a local maximum.
+\end{ex}
+

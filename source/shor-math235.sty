@@ -1,0 +1,94 @@
+\theoremstyle{definition}
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{ex}{$\star$ Exercise}
+\newcommand{\question}[1]{\item (#1 points)}
+
+%%%%% special commands
+\newcommand{\bv}[1]{{\bf{#1}}} % boldface vectors
+\newcommand*\dif{\mathop{}\!\mathrm{d}} % differential 'd'
+\newcommand*\D{\mathop{}\!\mathrm{D}}
+\newcommand{\dA}{\dif A}
+\newcommand{\dV}{\dif V}
+\newcommand{\ddx}{\frac{\dif}{\dif x}}
+\newcommand{\dd}[1]{\frac{\dif}{\dif #1}}
+\newcommand{\dfd}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\pfp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dt}{\dif t}
+\newcommand{\dx}{\dif x}
+\newcommand{\dy}{\dif y}
+\newcommand{\dz}{\dif z}
+\newcommand{\dtheta}{\dif \theta}
+\newcommand{\dr}{\dif r}
+\newcommand{\drho}{\dif \rho}
+\newcommand{\dphi}{\dif \phi}
+\newcommand{\dvr}{\dif\vec{r}}
+\newcommand{\drr}{\dif \bv{r}}
+\newcommand{\divv}{\text{div }}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\ii}{\vec{\mathrm{i}}}
+\newcommand{\jj}{\vec{\mathrm{j}}}
+\newcommand{\kk}{\vec{\mathrm{k}}}
+
+%\newcommand{\proj}{\text{proj }}
+\newcommand*\dv{\mathop{}\!\text{div}\ } % divergence operator
+\newcommand*\curl{\mathop{}\!\text{curl}\ } % curl operator
+\newcommand\proj{\mathop{}\!\text{proj} } % 
+\newcommand\comp{\mathop{}\!\text{comp} } % 
+\newcommand*\Arg{\mathop{}\!\text{Arg} } % Arg operator
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} %partial deriv
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}} %partial second deriv
+
+\newcolumntype{C}[1]{>{\centering}m{#1}}
+\newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
+
+
+
+\makeatletter
+\newlength\xvec@height%
+\newlength\xvec@depth%
+\newlength\xvec@width%
+\newcommand{\xvec}[2][]{%
+  \ifmmode%
+    \settoheight{\xvec@height}{$#2$}%
+    \settodepth{\xvec@depth}{$#2$}%
+    \settowidth{\xvec@width}{$#2$}%
+  \else%
+    \settoheight{\xvec@height}{#2}%
+    \settodepth{\xvec@depth}{#2}%
+    \settowidth{\xvec@width}{#2}%
+  \fi%
+  \def\xvec@arg{#1}%
+  \def\xvec@dd{:}%
+  \def\xvec@d{.}%
+  \raisebox{.2ex}{\raisebox{\xvec@height}{\rlap{%
+    \kern.05em%  (Because left edge of drawing is at .05em)
+    \begin{tikzpicture}[scale=1]
+    \pgfsetroundcap
+    \draw (.05em,0)--(\xvec@width-.05em,0);
+    \draw (\xvec@width-.05em,0)--(\xvec@width-.15em, .075em);
+    \draw (\xvec@width-.05em,0)--(\xvec@width-.15em,-.075em);
+    \ifx\xvec@arg\xvec@d%
+      \fill(\xvec@width*.45,.5ex) circle (.5pt);%
+    \else\ifx\xvec@arg\xvec@dd%
+      \fill(\xvec@width*.30,.5ex) circle (.5pt);%
+      \fill(\xvec@width*.65,.5ex) circle (.5pt);%
+    \fi\fi%
+    \end{tikzpicture}%
+  }}}%
+  #2%
+}
+\makeatother
+
+\makeatletter
+\newcommand*\dotp{\mathpalette\dotp@{.5}}
+\newcommand*\dotp@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+% --- Override \vec with an invocation of \xvec.
+\let\stdvec\vec
+\renewcommand{\vec}[1]{\xvec[]{#1}}

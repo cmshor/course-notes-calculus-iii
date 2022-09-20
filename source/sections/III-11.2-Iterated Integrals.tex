@@ -1,0 +1,62 @@
+\newlecture
+\setcounter{chapter}{11}
+\setcounter{section}{1}
+
+%\def\textbookchapter{Chapter 11: Multiple Integrals}
+\def\coursetopicnumber{III}
+\def\topic{Double Riemann Sums and Double Integrals over Rectangles} % this is the printed title
+\def\shorttopic{Iterated integrals} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{11.2} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-11-2-Iterated-Integrals.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+\section{\topic{} \booklink{}}
+\label{sec:iterated-integration}
+We can use techniques from Calculus II to evaluate $\iint\limits_R f\dA$, the double integral of $f(x,y)$ over the rectangle $R=[a,b]\times[c,d]$. Earlier, we imagined chopping $R$ up into subrectangles, selecting a sample point in each subrectangle. To simplify things slightly, we can imagine choosing sample $x$-values $x_1^*, x_2^*, \dots, x_m^*$ in $[a,b]$ and sample $y$-values $y_1^*, y_2^*, \dots, y_n^*$ in $[c,d]$, combining them to choose the sample point $(x_i^*,y_j^*)$ in the rectangle $R_{i,j}$.
+
+Since $\Delta A=\Delta x \Delta y$, we have 
+\[
+    \iint\limits_R f(x,y)\dA = \lim\limits_{m\to\infty}\lim\limits_{n\to\infty}\sum\limits_{i=1}^m\sum\limits_{j=1}^nf(x_i^*,y_j^*)\Delta x\Delta y\hspace{2in}\mbox{}
+\]
+
+\vfill
+\begin{thm}[Fubini's Theorem]
+    Let $f$ be continuous on the rectangular region $R=[a,b]\times[c,d]$. The double integral of $f$ over $R$ is equal to both of the following iterated integrals:
+    \[
+        \iint\limits_R f(x,y)\dA = \int\limits_{y=c}^{y=d}\, \int\limits_{x=a}^{x=b} f(x,y)\dx\dy = \int\limits_{x=a}^{x=b}\,\int\limits_{y=c}^{y=d} f(x,y)\dy\dx.
+    \]
+\end{thm}
+\bigskip 
+
+In Chapter 10, we learned about partial derivatives. To take a partial derivative of a function (like $f(x,y)$), we need to know which variable we are differentiating with respect to (which is determined by the partial derivative operator, like $\frac{\partial}{\partial x}$), and we treat any other variables as constants. 
+
+The same process applies with integration. If we are integrating a function (like $f(x,y)$), we need to know which variable we are integrating with respect to (which is determined by the differential, like $\dx$), and we treat any other variables as constants.
+
+\pagebreak 
+
+\subsection{The iterated integral process}
+To evaluate an iterated integral, we first evaluate the inner integral, then we plug the result of that into the outer integral, and then evaluate the outer integral.
+
+\begin{ex}
+    In Exercise~\ref{ex:double-integral-via-geometry} from Section 11.1, we used geometry to evaluate $\iint\limits_R f\dA$ for $f(x,y)=5$ and $R=[0,2]\times[1,4]$. Evaluate this integral as an iterated integral.
+\end{ex}
+
+\vfill 
+
+\begin{ex}
+    Draw the rectangle $R$ given by $[0,1]\times[2,4]$. Then evaluate the double integral of $f(x,y)=6-2x-y$ over $R$. Do so for both possible variable orders.
+\end{ex}
+
+\vfill \vfill 
+
+\pagebreak 
+
+\begin{ex}
+    Let $f(x,y)=ye^{xy}$. Let $R$ be the rectangle given by $0\le x\le 1$ and $0\le y\le\ln2$. Find the volume of the solid that lies under the graph of $z=f(x,y)$ and above the rectangle $R$. %Evaluate $\displaystyle\iint\limits_R f(x,y)\dA$.
+\end{ex}

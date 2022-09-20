@@ -1,0 +1,172 @@
+\newlecture
+\setcounter{chapter}{11}
+\setcounter{section}{7}
+
+%\def\textbookchapter{Chapter 11: Multiple Integrals}
+\def\coursetopicnumber{III}
+\def\topic{Triple Integrals in Cylindrical and Spherical Coordinates} % this is the printed title
+\def\shorttopic{Cylindrical, spherical integration} % short topic
+\def\textbookname{Active Calculus} % this is the corresponding textbook
+\def\shorttextbookname{AC} % this is the short name for the book
+\def\textbooksection{11.8} % corresponding textbook section
+\def\textbooksectionurl{https://activecalculus.org/vector/S-11-8-Triple-Integrals-Cylindrical-Spherical.html} % URL for textbook section
+\def\handoutday{} % this is the printed date
+
+%%%%%%%%% DOCUMENT CONTENT STARTS BELOW
+
+\thispagestyle{plain}
+\topstuff
+\section{\topic{} \booklink{}}
+\label{sec:triple-spherical-cylindrical}
+In Section \ref{sec:double-int-polar}, we saw how to evaluate double integrals using polar coordinates. This choice of coordinates is useful when integrating over a region that has circular symmetry.
+
+When working with triple integrals, we will see two new coordinate systems. Cylindrical coordinates are useful when a region has circular symmetry. Spherical coordinates are useful when a region has spherical symmetry.
+
+\subsection{Cylindrical coordinates}
+Cylindrical coordinates are useful for describing a region in $\mathbb{R}^3$ that has some sort of circular symmetry. To describe a point $P$ in $\mathbb{R}^3$, we visualize it as if it is on the rim of a circular cylinder with its base centered at the origin in the $xy$-plane. We describe $P$ with a radius $r$, a height $z$, and an angle $\theta$ on the rim of the face of the cylinder.
+\bigskip 
+
+\noindent A point $P=(x,y,z)$ (rectangular coordinates) can be written with \emph{cylindrical coordinates} $(r,\theta,z)$: % as:
+\begin{itemize}
+    \item $x=\phantom{r\cos(\theta)}$
+    \item $y=\phantom{r\sin(\theta)}$
+    \item $z=\phantom{z}$
+\end{itemize}
+
+\vfill
+
+%We generally take $r\ge0$,\, $0\le \theta<2\pi$,\, and $z\in\mathbb{R}$.
+%\subsection{Fundamental surfaces}
+%\vspace{2in}
+
+
+\begin{ex}
+    Use cylindrical coordinates to describe a wedge of a cheese wheel of radius 6 cm that is 4 cm tall and has an angle of $30^\circ$.
+\end{ex}
+
+\vspace{1.5in}
+
+\pagebreak 
+
+\subsubsection{Differentials for cylindrical coordinates}
+To compute  $\iiint\limits_D f\dV$ with cylindrical coordinates, we need $\dV$ in terms of $\dr$, $\dtheta$, $\dz$. \medskip 
+
+\noindent Since cylindrical coordinates are just polar coordinates with $z$, and since $\dV=\dx\dy\dz$, we have \bigskip 
+
+\[
+    \dV=\phantom{ \dx\dy\dz=r\dr\dtheta\dz.}\hspace{2in}
+\] 
+
+\bigskip 
+
+\begin{framed}
+    {\centering 
+        \textbf{Method to compute a triple integral using cylindrical coordinates}  
+    \par}
+    \bigskip 
+    
+    Given a function $f$ and a region $D$, to compute $\iiint\limits_D f\dV$ using cylindrical coordinates,
+    \begin{itemize}
+        \item Describe $D$ using inequalities with cylindrical coordinates $r$, $\theta$, $z$.
+        \item Put those bounds in as the endpoints of each integral symbol, recalling the order rules.
+        \item Write $f$ in terms of cylindrical coordinates (using $x=r\cos\theta$, $y=r\sin\theta$, $z=z$). Keep in mind that $x^2+y^2=r^2$.
+        \item Write $\dV = r\dr\dtheta\dz$, with the order of differentials corresponding to the order of the integrals.
+        \item Evaluate Inner, then Middle, then Outer. If any integral is difficult, think about putting the differentials in another valid order (if possible).
+    \end{itemize} 
+\end{framed}
+
+\begin{ex}
+    Let $f(x,y,z)=x-2y+z$. Let $D$ be the solid cylinder of radius 3 and height 4 sitting on the $xy$-plane centered on the positive $z$-axis. Write $\displaystyle\iiint\limits_D f\dV$ using cylindrical coordinates.
+\end{ex}
+
+\vfill
+
+\pagebreak 
+\subsection{Spherical coordinates}
+Spherical coordinates are useful for describing a region in $\mathbb{R}^3$ that has some sort of spherical symmetry. To describe a point $P$ in $\mathbb{R}^3$, we think about it as being on a sphere of radius $\rho$ along with two angles: $\theta$ and $\phi$, which are like longitude and latitude.
+
+\subsection{Coordinates}
+A point $P=(x,y,z)$ (rectangular coordinates) can be written with \emph{spherical coordinates} $(\rho,\theta,\phi)$:
+\begin{itemize}
+    \item $x=\phantom{\rho\cos(\theta)\sin(\phi)}$
+    \item $y=\phantom{\rho\sin(\theta)\sin(\phi)}$
+    \item $z=\phantom{\rho\cos(\phi)}$
+\end{itemize}
+
+\vfill 
+
+%We generally take $\rho\ge0$,\, $0\le \theta<2\pi$, and $0 \le \phi \le \pi$.
+%\vfill 
+
+%\subsection{Fundamental surfaces}
+%\vspace{2in}
+
+\begin{ex}
+    Use spherical coordinates to describe the portion of a ball of radius 5 centered at the origin with $y\le0$ and $z\ge0$. %(A \emph{ball} is a filled-in sphere, just as a \emph{disk} is a filled-in circle.)
+\end{ex}
+
+\vspace{1.5in}
+
+\pagebreak 
+
+\subsubsection{Differentials for spherical coordinates}
+To compute $\displaystyle\iiint\limits_D f\dV$ with spherical coordinates, we need $\dV$ in terms of $\drho$, $\dtheta$, $\dphi$.
+
+If you're at the point $(\rho,\theta,\phi)$ and increase each variable (by $\Delta \rho$, $\Delta \theta$, $\Delta \phi$), the resulting volume is 
+\[
+    \Delta V \approx \rho^2 \sin\phi \, \Delta \rho\, \Delta \theta \, \Delta \phi.
+\]
+To understand where this comes from, see \href{https://activecalculus.org/vector/S-11-8-Triple-Integrals-Cylindrical-Spherical.html#A_11_8_8}{Activity 11.8.6 in the textbook}. Thus, for integration purposes, 
+\[
+    \dV = \phantom{\rho^2\sin\phi \, \drho \dtheta \dphi.}
+\]
+\bigskip 
+
+(More generally, to understand how differentials work with a change of coordinates for any number of variables, see \href{https://activecalculus.org/vector/S-11-9-Change-of-Variable.html}{Section 11.9 of the textbook, which is titled ``Change of Variables.''})
+\begin{framed}
+    {\centering 
+        \textbf{Method to compute a triple integral using spherical coordinates}  
+    \par}
+    \bigskip 
+    
+    Given a function $f$ and a region $D$, to compute $\iiint\limits_D f\dV$ using spherical coordinates,
+    \begin{itemize}
+        \item Describe $D$ using inequalities with spherical coordinates $\rho$, $\theta$, $\phi$.
+        \item Put those bounds in as the endpoints of each integral symbol, recalling the order rules.
+        \item Write $f$ in terms of spherical coordinates (using $x=\rho\cos\theta\sin\phi$, $y=\rho\sin\theta\sin\phi$, $z=\rho\cos\phi$). Keep in mind that $x^2+y^2+z^2=\rho^2$.
+        \item Write $\dV = \rho^2\sin\phi\drho\dtheta\dphi$, with the order of differentials corresponding to the order of the integrals.
+        \item Evaluate Inner, then Middle, then Outer. If any integral is difficult, think about putting the differentials in another valid order (if possible).
+    \end{itemize} 
+\end{framed}
+
+\begin{ex}
+    Let $f(x,y,z)=3+x^2+y^2+z^2$, and let $W$ be the portion of a ball of radius 5 centered at the origin where $y\le0$ and $z\ge0$. Write $\displaystyle\iiint\limits_W f\dV$ as using spherical coordinates.
+\end{ex}
+
+\pagebreak 
+
+\subsection{Examples}
+Remember, the choice of coordinates depends on the region!
+\begin{ex}
+    A circular cone $D$ is given by the equation $z=\sqrt{x^2+y^2}$. Suppose a circular cone of height 10 cm is filled with ice cream. The density of the ice cream $z$ cm above the bottom is $(30-z)$g/cm$^3$. Set up a triple integral to compute the mass of the ice cream in the cone using cylindrical coordinates.
+\end{ex}
+
+\vfill 
+
+\pagebreak 
+
+\begin{ex}
+    Let $D$ be the top half of a ball of radius 7 centered at the origin. Compute the volume of $D$ using a triple integral.
+    %Using geometry, determine $\displaystyle\iiint_D\dV$. Write this triple integral as an iterated integral using Cartesian coordinates. Write this triple integral as an iterated integral using spherical coordinates.%Rewrite $\displaystyle\int\limits_{0}^7\int\limits_{-\sqrt{49-z^2}}^{\sqrt{49-z^2}}\int\limits_{-\sqrt{49-y^2-z^2}}^{\sqrt{49-y^2-z^2}}\dx\dy\dz$ as an integral with spherical coordinates. Then evaluate it.%Compute the volume of a sphere of radius 7.
+\end{ex}
+
+\vfill
+
+\vspace{.5in}
+
+\pagebreak 
+
+\begin{ex}
+    Set up an iterated integral to find the volume of the solid region $D$ which is enclosed by the top half of a unit sphere centered at the origin and a circular cone given by the equation $z=\sqrt{x^2+y^2}$. (If time permits, evaluate it.)
+\end{ex}
+

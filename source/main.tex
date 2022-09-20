@@ -1,0 +1,60 @@
+\documentclass[12pt]{report}
+
+%%%%% details about this course
+\def\instructor{Prof.\ Caleb M.\ Shor}
+\def\instructorshort{Shor}
+\def\coursetitle{Calculus III}
+\def\coursenumber{Math 235}
+\def\school{Western New England University}
+\def\schoolshort{WNE}
+\def\termsemester{Fall}
+\def\termsemestershort{Fall}
+\def\termyear{2022}
+\def\namespace{NAME \underline{\hspace{5cm}}}
+\usepackage{shor-course-notes}
+\usepackage{shor-math235}
+\usepackage{varwidth,pgfplots}
+\pgfplotsset{compat=1.9} 
+
+\newcommand{\cctag}{\href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{\includegraphics[width=.13\textwidth]{cc-by-nc-sa}}}
+\newcommand{\github}{\href{https://github.com/cmshor/course-notes-calculus-iii}{Course Notes}}
+\newcommand\hide[1]{\phantom{\varwidth{\linewidth}#1\endvarwidth}}
+%prop thm lem example defn cor ex
+
+\begin{document}
+
+\input{intro}
+\pagebreak \pagestyle{plain}
+\tableofcontents \pagebreak \pagestyle{fancy} \pagenumbering{arabic}
+
+\input{sections/I-09.1-first-half Multivariable Functions and Visualization}
+\input{sections/I-09.2 Vectors}
+\input{sections/I-09.3 Dot Product}
+\input{sections/I-09.4 Cross Product}
+\input{sections/I-09.5 Lines and Planes}
+\input{sections/I-09.6 Vector-Valued Functions}
+\input{sections/I-09.7 Derivatives and Integrals}
+\input{sections/I-09.8 Arc Length}
+
+\input{sections/II-09.1-second-half Multivariable Functions and Visualization}
+\input{sections/II-10.1 Limits}
+\input{sections/II-10.2 First-Order Partials}
+\input{sections/II-10.4 Linearization}
+\input{sections/II-10.5 Chain Rule}
+\input{sections/II-10.6 Directional Derivative and Gradient}
+\input{sections/II-10.7 Optimization}
+
+\input{sections/III-11.1 Double integrals}
+\input{sections/III-11.2-Iterated Integrals}
+\input{sections/III-11.3 Double integrals over general regions}
+\input{sections/III-11.5 Double integrals in Polar Coordinates}
+\input{sections/III-11.4 Applications of double integration}
+\input{sections/III-11.7 Triple Integrals}
+\input{sections/III-11.8 Triple Integrals in Cylindrical and Spherical Coords}
+
+\input{sections/IV-12.1 Vector Fields}
+\input{sections/IV-12.2 The Idea of a Line Integral}
+\input{sections/IV-12.3 Using Parametrizations to Calculate Line Integrals}
+\input{sections/IV-12.4 Path-Independent Vector Fields and FTCLI}
+\input{sections/IV-12.7 Green's Theorem}
+\end{document}
